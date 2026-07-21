@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefing — Site Final</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { body: ['"DM Sans"', 'sans-serif'] },
+          colors: {
+            brand: '#6b8f7e',
+            'brand-dark': '#4a6b5c',
+            warm: '#4a3c38',
+            muted: '#8a7e78'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    input:focus, textarea:focus { outline: none; ring: 2px solid #6b8f7e; }
+  </style>
+</head>
+<body class="bg-stone-50 text-warm min-h-screen">
+
+<div class="max-w-2xl mx-auto px-5 py-10">
+  
+  <!-- Header -->
+  <div class="mb-10">
+    <h1 class="text-3xl font-bold text-warm mb-2">Briefing do Site</h1>
+    <p class="text-muted">Preencha os dados abaixo. Em até 24h seu site estará no ar.</p>
+    <div id="lead-name" class="mt-3 inline-block bg-brand/10 text-brand text-sm font-semibold px-4 py-1.5 rounded-full"></div>
+  </div>
+
+  <!-- Form -->
+  <form id="briefing-form" class="space-y-8" onsubmit="return false">
+    
+    <!-- 1. Identidade Visual -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+      <h2 class="text-lg font-semibold text-warm mb-4">📸 Identidade Visual</h2>
+      
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Logo do negócio (link ou arquivo)</span>
+        <input type="url" name="logo_url" placeholder="https://drive.google.com/seu-logo.png" 
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+      
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Cores preferidas</span>
+        <input type="text" name="cores_preferidas" placeholder="Ex: preto e dourado"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Fotos da fachada (links) *</span>
+        <textarea name="fotos_fachada" rows="2" required
+                  placeholder="https://drive.google.com/fachada1.jpg&#10;https://drive.google.com/fachada2.jpg"
+                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Fotos do interior (links) *</span>
+        <textarea name="fotos_interior" rows="2" required
+                  placeholder="https://drive.google.com/interior1.jpg&#10;https://drive.google.com/interior2.jpg"
+                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
+      </label>
+
+      <label class="block">
+        <span class="text-sm font-medium text-warm">Foto da equipe (link)</span>
+        <input type="url" name="foto_equipe" placeholder="https://drive.google.com/equipe.jpg"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+    </section>
+
+    <!-- 2. Serviços -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+      <h2 class="text-lg font-semibold text-warm mb-4">🛠️ Serviços e Preços</h2>
+      
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Lista de serviços *</span>
+        <textarea name="servicos" rows="4" required
+                  placeholder="Corte masculino - R$ 40&#10;Barba - R$ 30&#10;Hidratação - R$ 50"
+                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
+      </label>
+
+      <label class="block">
+        <span class="text-sm font-medium text-warm">Mostrar preços no site?</span>
+        <select name="mostrar_precos" class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm bg-white">
+          <option value="sim">Sim, mostrar preços</option>
+          <option value="nao">Não, usar "Sob consulta"</option>
+        </select>
+      </label>
+    </section>
+
+    <!-- 3. História -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+      <h2 class="text-lg font-semibold text-warm mb-4">📝 Sobre o Negócio</h2>
+      
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Quando abriu? *</span>
+        <input type="text" name="fundacao" required placeholder="Ex: Desde 2012"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">História do negócio *</span>
+        <textarea name="historia" rows="3" required
+                  placeholder="Conte um pouco sobre como tudo começou..."
+                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Equipe (quantas pessoas? algum destaque?)</span>
+        <input type="text" name="equipe" placeholder="Ex: 3 barbeiros, Cesar é campeão estadual 2024"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Diferencial do negócio *</span>
+        <textarea name="diferencial" rows="2" required
+                  placeholder="O que faz vocês diferentes dos concorrentes?"
+                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
+      </label>
+
+      <label class="block">
+        <span class="text-sm font-medium text-warm">Prêmios ou destaques</span>
+        <input type="text" name="premios" placeholder="Ex: Melhor barbearia de Camboriú 2025"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+    </section>
+
+    <!-- 4. Contato -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+      <h2 class="text-lg font-semibold text-warm mb-4">📍 Contato e Localização</h2>
+      
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Endereço completo *</span>
+        <input type="text" name="endereco" required placeholder="Rua X, 123 - Bairro, Cidade - SC"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">CEP</span>
+        <input type="text" name="cep" placeholder="88330-000"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Horário de funcionamento *</span>
+        <input type="text" name="horario" required placeholder="Seg-Sex 9h-19h, Sáb 9h-14h"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+
+      <label class="block">
+        <span class="text-sm font-medium text-warm">WhatsApp principal *</span>
+        <input type="tel" name="whatsapp" required placeholder="(47) 99999-9999"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+    </section>
+
+    <!-- 5. Online -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+      <h2 class="text-lg font-semibold text-warm mb-4">🌐 Online</h2>
+      
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Instagram</span>
+        <input type="text" name="instagram" placeholder="@seuinstagram"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Facebook / TikTok (se tiver)</span>
+        <input type="text" name="outras_redes" placeholder="facebook.com/sua-pagina"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+
+      <label class="block">
+        <span class="text-sm font-medium text-warm">Domínio desejado *</span>
+        <input type="text" name="dominio" required placeholder="nomedonegocio.com.br"
+               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+      </label>
+    </section>
+
+    <!-- 6. Depoimentos -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
+      <h2 class="text-lg font-semibold text-warm mb-4">💬 Depoimentos (opcional)</h2>
+      
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Depoimento 1</span>
+        <textarea name="depoimento_1" rows="2"
+                  placeholder='"Melhor barba da cidade!" — João S.'
+                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
+      </label>
+
+      <label class="block mb-4">
+        <span class="text-sm font-medium text-warm">Depoimento 2</span>
+        <textarea name="depoimento_2" rows="2"
+                  placeholder='"Ambiente impecável, voltarei sempre." — Maria'
+                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
+      </label>
+
+      <label class="block">
+        <span class="text-sm font-medium text-warm">Pode usar o nome real dos clientes?</span>
+        <select name="nome_real_ok" class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm bg-white">
+          <option value="sim">Sim, pode usar</option>
+          <option value="nao">Não, usar "Cliente verificado"</option>
+        </select>
+      </label>
+    </section>
+
+    <!-- Submit -->
+    <button type="submit" id="submit-btn"
+            class="w-full bg-brand hover:bg-brand-dark text-white font-semibold text-lg py-4 rounded-2xl transition-colors shadow-lg shadow-brand/20">
+      ✉️ Enviar Briefing
+    </button>
+    
+    <p id="status-msg" class="text-center text-sm hidden"></p>
+  </form>
+</div>
+
+<script>
+  // Get lead name from URL
+  const params = new URLSearchParams(window.location.search);
+  const leadName = params.get('lead') || 'Seu Negócio';
+  document.getElementById('lead-name').textContent = '👤 ' + decodeURIComponent(leadName);
+
+  // Supabase config
+  const SUPABASE_URL = 'https://kmuwuefkvkrqjxuqstes.supabase.co/rest/v1/briefings';
+  const SUPABASE_KEY = 'sb_publishable_WK5wpfsDd5jthcJhxvZNyA_bNDrbLev';
+
+  document.getElementById('briefing-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const msg = document.getElementById('status-msg');
+    
+    btn.disabled = true;
+    btn.textContent = '⏳ Enviando...';
+    msg.classList.add('hidden');
+
+    const form = e.target;
+    
+    // Map form fields to Supabase briefings schema
+    const data = {
+      lead_nome: leadName,
+      logo_url: form.logo_url.value || null,
+      cores_preferidas: form.cores_preferidas.value || null,
+      fotos_cliente: JSON.stringify([
+        form.fotos_fachada.value,
+        form.fotos_interior.value,
+        form.foto_equipe.value
+      ].filter(Boolean)),
+      servicos_precos: JSON.stringify(
+        form.servicos.value.split('\n').filter(s => s.trim()).map(s => {
+          const parts = s.split('-').map(p => p.trim());
+          return { servico: parts[0], preco: parts[1] || 'Sob consulta' };
+        })
+      ),
+      historia: form.historia.value,
+      equipe: form.equipe.value || null,
+      endereco_confirmado: form.endereco.value,
+      horario_atualizado: form.horario.value,
+      redes_sociais: JSON.stringify({
+        instagram: form.instagram.value || null,
+        outras: form.outras_redes.value || null
+      }),
+      dominio_desejado: form.dominio.value,
+      dominio_status: 'pendente'
+    };
+
+    try {
+      const resp = await fetch(SUPABASE_URL, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (resp.ok) {
+        msg.textContent = '✅ Briefing enviado com sucesso! Seu site ficará pronto em até 24h.';
+        msg.className = 'text-center text-sm text-green-600 font-medium mt-4';
+        btn.textContent = '✅ Enviado!';
+        btn.className = 'w-full bg-green-500 text-white font-semibold text-lg py-4 rounded-2xl cursor-default';
+        form.reset();
+      } else {
+        throw new Error('Erro ao enviar');
+      }
+    } catch (err) {
+      msg.textContent = '❌ Erro ao enviar. Tente novamente ou fale com nosso vendedor.';
+      msg.className = 'text-center text-sm text-red-500 font-medium mt-4';
+      btn.disabled = false;
+      btn.textContent = '✉️ Tentar Novamente';
+    }
+  });
+</script>
+
+</body>
+</html>
