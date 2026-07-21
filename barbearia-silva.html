@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Silva | Barbearia em Camboriú</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #0d0d0d; color: #e0e0e0; line-height: 1.6; }
+
+        nav { position: fixed; top: 0; width: 100%; background: rgba(13,13,13,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 16px 0; border-bottom: 1px solid #222; }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: #2E7D32; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: #aaa; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #2E7D32; }
+        .nav-cta { background: #2E7D32; color: #fff; padding: 10px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px; transition: transform 0.2s, box-shadow 0.2s; }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #1a1a1a 100%); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 70% 50%, #2E7D3215 0%, transparent 50%); }
+        .hero-content { max-width: 750px; position: relative; z-index: 1; }
+        .hero-badge { display: inline-block; background: #2E7D3222; border: 1px solid #2E7D3255; color: #2E7D32; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; margin-bottom: 28px; letter-spacing: 2px; text-transform: uppercase; }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(44px, 8vw, 72px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero h1 span { color: #2E7D32; }
+        .hero-address { font-size: 16px; color: #888; margin-bottom: 24px; }
+        .hero-tagline { font-size: 18px; color: #bbb; max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-highlights { display: flex; gap: 40px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap; }
+        .hero-highlight { display: flex; align-items: center; gap: 10px; }
+        .hero-highlight-icon { color: #2E7D32; font-size: 18px; }
+        .hero-highlight-text { color: #ccc; font-size: 14px; font-weight: 500; }
+        .hero-cta { display: inline-block; background: #25D366; color: #fff; padding: 18px 44px; border-radius: 4px; text-decoration: none; font-size: 18px; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+        .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(37,211,102,0.3); }
+
+        section { padding: 80px 24px; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+        .section-tag { color: #2E7D32; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .section-title { font-family: 'Oswald', sans-serif; font-size: clamp(32px, 5vw, 44px); font-weight: 700; color: #fff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+        .section-subtitle { color: #888; font-size: 16px; max-width: 600px; margin-bottom: 48px; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-image { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, #2E7D3233, #1a1a1a); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 80px; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+        .about-feature { display: flex; align-items: flex-start; gap: 12px; }
+        .about-feature-icon { color: #2E7D32; font-size: 20px; margin-top: 2px; }
+        .about-feature h4 { color: #fff; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+        .about-feature p { color: #777; font-size: 13px; }
+
+        .services { background: #111; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+        .service-card { background: #1a1a1a; border: 1px solid #222; border-radius: 8px; padding: 32px 24px; text-align: center; transition: transform 0.3s, border-color 0.3s; }
+        .service-card:hover { transform: translateY(-4px); border-color: #2E7D32; }
+        .service-icon { font-size: 48px; margin-bottom: 16px; }
+        .service-card h3 { font-family: 'Oswald', sans-serif; font-size: 20px; color: #fff; margin-bottom: 8px; }
+        .service-card p { color: #888; font-size: 14px; }
+        .service-price { color: #2E7D32; font-weight: 700; font-size: 18px; margin-top: 12px; }
+
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .testimonial-card { background: #1a1a1a; border: 1px solid #222; border-radius: 8px; padding: 28px; }
+        .testimonial-stars { color: #2E7D32; font-size: 16px; margin-bottom: 12px; }
+        .testimonial-card p { color: #bbb; font-size: 14px; font-style: italic; line-height: 1.7; margin-bottom: 16px; }
+        .testimonial-author { color: #fff; font-weight: 600; font-size: 14px; }
+        .testimonial-source { color: #666; font-size: 12px; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+        .contact-info-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+        .contact-icon { font-size: 24px; min-width: 24px; }
+        .contact-info-item h4 { color: #fff; font-size: 14px; margin-bottom: 4px; }
+        .contact-info-item p { color: #888; font-size: 14px; }
+        .contact-whatsapp { display: inline-block; background: #25D366; color: #fff; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 16px; margin-top: 16px; transition: transform 0.2s; }
+        .contact-whatsapp:hover { transform: translateY(-2px); }
+        .map-placeholder { width: 100%; height: 300px; border-radius: 8px; border: 1px solid #222; background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+        footer { background: #0a0a0a; border-top: 1px solid #222; padding: 32px 24px; text-align: center; }
+        footer p { color: #555; font-size: 13px; }
+
+        @media (max-width: 768px) {
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero-highlights { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-logo">Barbearia Silva</div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="https://wa.me/5547996193515?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário!" class="nav-cta" target="_blank">📱 Agendar</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Barbearia Premium · Bairro Areias</div>
+            <h1>Barbearia Silva<br><span>Barbearia</span></h1>
+            <p class="hero-address">R. Bahia - Bairro Areias, Camboriú - SC</p>
+            <p class="hero-tagline">Cortes impecáveis, barba alinhada e aquela experiência que só uma barbearia de verdade proporciona. Seu visual merece esse cuidado.</p>
+            <div class="hero-highlights">
+                <div class="hero-highlight">
+                    <div class="hero-highlight-icon">✂️</div>
+                    <div class="hero-highlight-text">Corte personalizado</div>
+                </div>
+                <div class="hero-highlight">
+                    <div class="hero-highlight-icon">🧔</div>
+                    <div class="hero-highlight-text">Barba premium</div>
+                </div>
+                <div class="hero-highlight">
+                    <div class="hero-highlight-icon">🍺</div>
+                    <div class="hero-highlight-text">Cerveja cortesia</div>
+                </div>
+            </div>
+            <a href="https://wa.me/5547996193515?text=Olá!%20Quero%20agendar%20um%20horário%20na%20Barbearia%20Silva!" class="hero-cta" target="_blank">💈 Agendar pelo WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="section-inner">
+            <div class="section-tag">Nossa História</div>
+            <h2 class="section-title">Tradição & Estilo</h2>
+            <p class="section-subtitle">A Barbearia Silva é referência em barbearia masculina no Bairro Areias, unindo o clássico e o moderno em cada corte.</p>
+            <div class="about-grid">
+                <div class="about-image">💈</div>
+                <div>
+                    <p style="color:#bbb;margin-bottom:24px;font-size:15px;line-height:1.8;">
+                        Localizada no <strong style="color:#2E7D32;">Bairro Areias</strong>, a <strong style="color:#2E7D32;">Barbearia Silva</strong> nasceu da paixão pela barbearia clássica. 
+                        Combinamos técnicas tradicionais com as últimas tendências para oferecer a melhor experiência 
+                        em cuidados masculinos da região.
+                    </p>
+                    <p style="color:#bbb;font-size:15px;line-height:1.8;">
+                        Nosso espaço foi pensado para que cada cliente se sinta em casa — ambiente climatizado, 
+                        atendimento personalizado e os melhores profissionais da cidade.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✂️</div>
+                            <div><h4>Corte Profissional</h4><p>Técnicas atualizadas e tesoura de precisão</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🧔</div>
+                            <div><h4>Barba Impecável</h4><p>Toalha quente e produtos premium</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🍺</div>
+                            <div><h4>Ambiente Premium</h4><p>Cerveja gelada cortesia da casa</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">📍</div>
+                            <div><h4>No Bairro Areias</h4><p>Atendendo Camboriú com excelência</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicos">
+        <div class="section-inner">
+            <div class="section-tag">Serviços</div>
+            <h2 class="section-title">O que fazemos</h2>
+            <p class="section-subtitle">Do clássico ao moderno, cada serviço é executado com maestria e atenção aos detalhes.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💇</div>
+                    <h3>Corte Masculino</h3>
+                    <p>Corte personalizado com tesoura, máquina e finalização com produtos premium.</p>
+                    <div class="service-price">Sob consulta</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧔</div>
+                    <h3>Barba Completa</h3>
+                    <p>Toalha quente, navalha, balm hidratante e desenho profissional.</p>
+                    <div class="service-price">Sob consulta</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💆</div>
+                    <h3>Combo Corte + Barba</h3>
+                    <p>O favorito da casa: corte + barba com valor especial no combo.</p>
+                    <div class="service-price">Sob consulta</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Hidratação Capilar</h3>
+                    <p>Tratamento com queratina e óleos essenciais para fios saudáveis.</p>
+                    <div class="service-price">Sob consulta</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Coloração / Platinado</h3>
+                    <p>Técnicas modernas de descoloração e tintura para um visual marcante.</p>
+                    <div class="service-price">Sob consulta</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>Corte Infantil</h3>
+                    <p>Atendimento especial para os pequenos, com paciência e carinho.</p>
+                    <div class="service-price">Sob consulta</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="avaliacoes">
+        <div class="section-inner">
+            <div class="section-tag">Avaliações</div>
+            <h2 class="section-title">Quem conhece, recomenda</h2>
+            <p class="section-subtitle">Veja o que nossos clientes dizem sobre a experiência na Barbearia Silva.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Melhor barbearia de Camboriú! Ambiente top, atendimento nota 10 e o corte sempre fica perfeito. Recomendo de olhos fechados."</p>
+                    <div class="testimonial-author">— Cliente verificado</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Profissionais muito atenciosos, lugar limpo e organizado. O combo corte + barba é o melhor custo-benefício da região."</p>
+                    <div class="testimonial-author">— Cliente verificado</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Desde que conheci, não corto em outro lugar. Agendamento fácil pelo WhatsApp e pontualidade impecável."</p>
+                    <div class="testimonial-author">— Cliente verificado</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="section-inner">
+            <div class="section-tag">Contato</div>
+            <h2 class="section-title">Agende seu horário</h2>
+            <p class="section-subtitle">Atendimento com hora marcada. Chame no WhatsApp e garanta seu lugar.</p>
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📍</div>
+                        <div><h4>Endereço</h4><p>R. Bahia - Bairro Areias, Camboriú - SC</p></div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📱</div>
+                        <div><h4>WhatsApp</h4><p>(47) 99619-3515</p></div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">🕐</div>
+                        <div><h4>Horário de Funcionamento</h4><p>Ter a Sex: 08:30 - 19:00 | Sáb: 08:30 - 16:00</p></div>
+                    </div>
+                    <a href="https://wa.me/5547996193515?text=Olá!%20Gostaria%20de%20agendar%20um%20horário!" class="contact-whatsapp" target="_blank">💬 Agendar pelo WhatsApp</a>
+                </div>
+                <div>
+                    <div class="map-placeholder">
+                        <div style="font-size:48px;margin-bottom:12px;">📍</div>
+                        <div style="color:#888;font-size:14px;">R. Bahia - Bairro Areias, Camboriú - SC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Barbearia Silva · R. Bahia - Bairro Areias, Camboriú - SC · (47) 99619-3515</p>
+    </footer>
+</body>
+</html>
