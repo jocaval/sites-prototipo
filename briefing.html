@@ -224,10 +224,17 @@
 </div>
 
 <script>
-  // Get lead name from URL
+  // Get lead info from URL params
   const params = new URLSearchParams(window.location.search);
+  const leadId = params.get('lead_id') || '';
   const leadName = params.get('lead') || 'Seu Negócio';
-  document.getElementById('lead-name').textContent = '👤 ' + decodeURIComponent(leadName);
+  
+  // Show lead name in header
+  const nameDisplay = leadId ? `🔗 Lead #${leadId.substring(0,8)} — ${decodeURIComponent(leadName)}` : `👤 ${decodeURIComponent(leadName)}`;
+  document.getElementById('lead-name').textContent = nameDisplay;
+  
+  // Store for submission
+  window._leadId = leadId;
 
   // Supabase config
   const SUPABASE_URL = 'https://kmuwuefkvkrqjxuqstes.supabase.co/rest/v1/briefings';
@@ -246,6 +253,7 @@
     
     // Map form fields to Supabase briefings schema
     const data = {
+      lead_id: window._leadId || null,
       lead_nome: leadName,
       logo_url: form.logo_url.value || null,
       cores_preferidas: form.cores_preferidas.value || null,
