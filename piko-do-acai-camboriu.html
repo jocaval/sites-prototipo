@@ -74,7 +74,8 @@
         .contact-info-item p { color: #888; font-size: 14px; }
         .contact-whatsapp { display: inline-block; background: #25D366; color: #fff; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 16px; margin-top: 16px; transition: transform 0.2s; }
         .contact-whatsapp:hover { transform: translateY(-2px); }
-        .map-placeholder { width: 100%; height: 300px; border-radius: 8px; border: 1px solid #222; background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .map-placeholder { width: 100%; height: 300px; border-radius: 8px; border: 1px solid #222; background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: border-color 0.3s; }
+        .map-placeholder:hover { border-color: #8E44AD; }
 
         footer { background: #0a0a0a; border-top: 1px solid #222; padding: 32px 24px; text-align: center; }
         footer p { color: #555; font-size: 13px; }
@@ -243,10 +244,13 @@
                     <a href="https://wa.me/5547997614412?text=Olá!%20Quero%20fazer%20um%20pedido!" class="contact-whatsapp" target="_blank">🍇 Pedir pelo WhatsApp</a>
                 </div>
                 <div>
+                <a href="https://www.google.com/maps?q=R.+Monte+Sotara,+1000+-+Monte+Alegre,+Cambori%C3%BA+-+SC" target="_blank" style="text-decoration:none;">
                     <div class="map-placeholder">
                         <div style="font-size:48px;margin-bottom:12px;">📍</div>
                         <div style="color:#888;font-size:14px;">R. Monte Sotara, 1000 - Monte Alegre<br>Camboriú - SC</div>
+                        <div style="color:#8E44AD;font-size:13px;margin-top:8px;font-weight:500;">🗺️ Abrir no Google Maps →</div>
                     </div>
+                </a>
                 </div>
             </div>
         </div>
