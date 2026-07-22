@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piko do Açaí | Açaí em Camboriú</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:image" content="https://pixabay.com/get/g7687f1f7a2b51bbf8fd870f38cbe409c041fb43608f2cbe2fbfc5b5d3ca3fb0af31b3939abdb14d48c0f454dc040ccdec6b5a84ffbec0000d5cf1a2a51e7ae9b_640.jpg">
+    <meta name="twitter:image" content="https://pixabay.com/get/g7687f1f7a2b51bbf8fd870f38cbe409c041fb43608f2cbe2fbfc5b5d3ca3fb0af31b3939abdb14d48c0f454dc040ccdec6b5a84ffbec0000d5cf1a2a51e7ae9b_640.jpg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background: #0d0d0d; color: #e0d8f0; line-height: 1.6; }
+
+        nav { position: fixed; top: 0; width: 100%; background: #0d0d0d; z-index: 1000; padding: 16px 0; border-bottom: 1px solid #1a1a2e; }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 22px; font-weight: 700; color: #8E44AD; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: #999; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #8E44AD; }
+        .nav-cta { background: #8E44AD; color: #fff; padding: 10px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px; transition: transform 0.2s, box-shadow 0.2s; }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(142,68,173,0.3); }
+
+        .hero { padding: 160px 24px 80px; background: linear-gradient(135deg, #0d0d0d 0%, #1a1025 50%, #1a1025 100%); position: relative; overflow: hidden; text-align: center; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 40%, #8E44AD15 0%, transparent 60%); }
+        .hero-content { max-width: 750px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-badge { display: inline-block; background: #8E44AD22; border: 1px solid #8E44AD55; color: #8E44AD; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; margin-bottom: 28px; letter-spacing: 2px; text-transform: uppercase; }
+        .hero h1 { font-size: clamp(40px, 7vw, 64px); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 12px; }
+        .hero h1 span { color: #8E44AD; }
+        .hero-address { font-size: 16px; color: #888; margin-bottom: 24px; }
+        .hero-tagline { font-size: 18px; color: #bbb; max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-highlights { display: flex; gap: 40px; justify-content: center; margin-bottom: 44px; flex-wrap: wrap; }
+        .hero-highlight { display: flex; align-items: center; gap: 10px; }
+        .hero-highlight-icon { color: #8E44AD; font-size: 18px; }
+        .hero-highlight-text { color: #ccc; font-size: 14px; font-weight: 500; }
+        .hero-cta { display: inline-block; background: #25D366; color: #fff; padding: 18px 44px; border-radius: 4px; text-decoration: none; font-size: 18px; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+        .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(37,211,102,0.3); }
+
+        section { padding: 80px 24px; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+        .section-tag { color: #8E44AD; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .section-title { font-size: clamp(30px, 5vw, 40px); font-weight: 700; color: #fff; margin-bottom: 16px; }
+        .section-subtitle { color: #888; font-size: 16px; max-width: 600px; margin-bottom: 48px; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-image { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+        .about-feature { display: flex; align-items: flex-start; gap: 12px; }
+        .about-feature-icon { color: #8E44AD; font-size: 20px; margin-top: 2px; }
+        .about-feature h4 { color: #fff; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+        .about-feature p { color: #777; font-size: 13px; }
+
+        .menu-section { background: #111; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .menu-card { background: #1a1a1a; border: 1px solid #222; border-radius: 8px; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
+        .menu-card:hover { transform: translateY(-4px); border-color: #8E44AD; }
+        .menu-card img { width: 100%; height: 180px; object-fit: cover; }
+        .menu-card-body { padding: 20px; }
+        .menu-card h3 { font-size: 18px; color: #fff; margin-bottom: 8px; font-weight: 600; }
+        .menu-card p { color: #888; font-size: 13px; line-height: 1.6; }
+        .menu-card-price { color: #8E44AD; font-weight: 700; font-size: 16px; margin-top: 12px; }
+
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .testimonial-card { background: #1a1a1a; border: 1px solid #222; border-radius: 8px; padding: 28px; }
+        .testimonial-stars { color: #8E44AD; font-size: 16px; margin-bottom: 12px; }
+        .testimonial-card p { color: #bbb; font-size: 14px; font-style: italic; line-height: 1.7; margin-bottom: 16px; }
+        .testimonial-author { color: #fff; font-weight: 600; font-size: 14px; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+        .contact-info-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+        .contact-icon { font-size: 24px; min-width: 24px; }
+        .contact-info-item h4 { color: #fff; font-size: 14px; margin-bottom: 4px; }
+        .contact-info-item p { color: #888; font-size: 14px; }
+        .contact-whatsapp { display: inline-block; background: #25D366; color: #fff; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 16px; margin-top: 16px; transition: transform 0.2s; }
+        .contact-whatsapp:hover { transform: translateY(-2px); }
+        .map-placeholder { width: 100%; height: 300px; border-radius: 8px; border: 1px solid #222; background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+        footer { background: #0a0a0a; border-top: 1px solid #222; padding: 32px 24px; text-align: center; }
+        footer p { color: #555; font-size: 13px; }
+
+        @media (max-width: 768px) {
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero-highlights { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-logo">Piko do Açaí</div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="https://wa.me/5547997614412?text=Olá!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido!" class="nav-cta" target="_blank">🍇 Pedir Agora</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Açaí Artesanal · Monte Alegre</div>
+            <h1>Piko do Açaí<br><span>Camboriú</span></h1>
+            <p class="hero-address">R. Monte Sotara, 1000 - Monte Alegre, Camboriú - SC</p>
+            <p class="hero-tagline">Açaí cremoso, toppings frescos e aquela energia que só um açaí raiz proporciona. Do bowl ao copo, cada pedido é feito na hora com os melhores ingredientes.</p>
+            <div class="hero-highlights">
+                <div class="hero-highlight">
+                    <div class="hero-highlight-icon">🍇</div>
+                    <div class="hero-highlight-text">Açaí 100% natural</div>
+                </div>
+                <div class="hero-highlight">
+                    <div class="hero-highlight-icon">🍌</div>
+                    <div class="hero-highlight-text">Frutas frescas</div>
+                </div>
+                <div class="hero-highlight">
+                    <div class="hero-highlight-icon">⚡</div>
+                    <div class="hero-highlight-text">Delivery rápido</div>
+                </div>
+            </div>
+            <a href="https://wa.me/5547997614412?text=Olá!%20Quero%20fazer%20um%20pedido%20no%20Piko%20do%20Açaí!" class="hero-cta" target="_blank">🍇 Pedir pelo WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="section-inner">
+            <div class="section-tag">Nossa História</div>
+            <h2 class="section-title">Paixão pelo Açaí</h2>
+            <p class="section-subtitle">O Piko do Açaí nasceu pra trazer o melhor açaí artesanal pro Monte Alegre — sem mistério, só qualidade.</p>
+            <div class="about-grid">
+                <img src="https://pixabay.com/get/g7687f1f7a2b51bbf8fd870f38cbe409c041fb43608f2cbe2fbfc5b5d3ca3fb0af31b3939abdb14d48c0f454dc040ccdec6b5a84ffbec0000d5cf1a2a51e7ae9b_640.jpg" class="about-image" alt="Piko do Açaí">
+                <div>
+                    <p style="color:#bbb;margin-bottom:24px;font-size:15px;line-height:1.8;">
+                        Localizado no <strong style="color:#8E44AD;">Monte Alegre</strong>, o <strong style="color:#8E44AD;">Piko do Açaí</strong> é o point de quem busca açaí cremoso de verdade. 
+                        Trabalhamos com polpa premium, frutas selecionadas e aquele atendimento que faz você voltar sempre.
+                    </p>
+                    <p style="color:#bbb;font-size:15px;line-height:1.8;">
+                        Nosso diferencial é a montagem personalizada — você escolhe os toppings, a gente capricha na quantidade.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🍇</div>
+                            <div><h4>Polpa Premium</h4><p>Açaí puro, cremoso e sem gelo</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🍓</div>
+                            <div><h4>Toppings Frescos</h4><p>Frutas, granola, leite em pó e mais</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🛵</div>
+                            <div><h4>Delivery</h4><p>Receba seu açaí onde estiver</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">📍</div>
+                            <div><h4>Monte Alegre</h4><p>Pertinho de você, em Camboriú</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+        <div class="section-inner">
+            <div class="section-tag">Cardápio</div>
+            <h2 class="section-title">Nossos Açaís</h2>
+            <p class="section-subtitle">Cada bowl é montado na hora, do seu jeito. Veja os favoritos da casa.</p>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://pixabay.com/get/g3c6e74e41b59b59dbd8f23ee57e6ff7421c19833cc57145a4325d9c33526f08136ca97bd43b77656dcb2049c282bffe9_640.jpg" alt="Açaí Tradicional">
+                    <div class="menu-card-body">
+                        <h3>Açaí Tradicional</h3>
+                        <p>300ml de açaí puro com granola, banana, morango e leite condensado.</p>
+                        <div class="menu-card-price">Sob consulta</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://pixabay.com/get/gfb951e9f0fed1f945be8bc5301524b5101951aa2884dc7799d97c884929f6476dbbb9416c100043c09240a865b7b386f_640.jpg" alt="Açaí Power">
+                    <div class="menu-card-body">
+                        <h3>Açaí Power</h3>
+                        <p>500ml de açaí turbinado com whey, pasta de amendoim, granola e banana.</p>
+                        <div class="menu-card-price">Sob consulta</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://pixabay.com/get/gb74622c6b5b4d5752db97ceeb9de5f7eec0f1b72f5590363b6fdde45e150215dabff0b1ec03cb53a02d2b131336c542009d2db2e3134513a17e19df3b5a9316b_640.jpg" alt="Açaí Bowl">
+                    <div class="menu-card-body">
+                        <h3>Açaí Bowl Completo</h3>
+                        <p>700ml de açaí com frutas variadas, granola especial, mel e castanhas.</p>
+                        <div class="menu-card-price">Sob consulta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="avaliacoes">
+        <div class="section-inner">
+            <div class="section-tag">Avaliações</div>
+            <h2 class="section-title">Quem provou, aprovou</h2>
+            <p class="section-subtitle">Veja o que a galera acha do Piko do Açaí.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Melhor açaí de Camboriú! Cremoso, bem servido e os toppings sempre fresquinhos. Peço toda semana!"</p>
+                    <div class="testimonial-author">— Cliente verificado</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"O bowl completo é sensacional. Dá pra dois e ainda sobra. Atendimento nota mil!"</p>
+                    <div class="testimonial-author">— Cliente verificado</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Pedimos pelo WhatsApp e chegou rapidinho. Açaí geladinho e montagem caprichada. Recomendo!"</p>
+                    <div class="testimonial-author">— Cliente verificado</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="section-inner">
+            <div class="section-tag">Contato</div>
+            <h2 class="section-title">Fala com a gente</h2>
+            <p class="section-subtitle">Faça seu pedido pelo WhatsApp ou venha nos visitar no Monte Alegre.</p>
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📍</div>
+                        <div><h4>Endereço</h4><p>R. Monte Sotara, 1000 - Monte Alegre, Camboriú - SC</p></div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📱</div>
+                        <div><h4>WhatsApp</h4><p>(47) 99761-4412</p></div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">🕐</div>
+                        <div><h4>Horário de Funcionamento</h4><p>Seg a Sáb: 13:30 às 22:00</p></div>
+                    </div>
+                    <a href="https://wa.me/5547997614412?text=Olá!%20Quero%20fazer%20um%20pedido!" class="contact-whatsapp" target="_blank">🍇 Pedir pelo WhatsApp</a>
+                </div>
+                <div>
+                    <div class="map-placeholder">
+                        <div style="font-size:48px;margin-bottom:12px;">📍</div>
+                        <div style="color:#888;font-size:14px;">R. Monte Sotara, 1000 - Monte Alegre<br>Camboriú - SC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Piko do Açaí Camboriú · R. Monte Sotara, 1000 - Monte Alegre · (47) 99761-4412</p>
+    </footer>
+</body>
+</html>
