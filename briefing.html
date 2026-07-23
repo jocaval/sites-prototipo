@@ -24,6 +24,66 @@
   <style>
     body { font-family: 'DM Sans', sans-serif; }
     input:focus, textarea:focus { outline: none; ring: 2px solid #6b8f7e; }
+    
+    .drop-zone {
+      border: 2px dashed #d6d3d1;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .drop-zone:hover, .drop-zone.drag-over {
+      border-color: #6b8f7e;
+      background: #f0f7f4;
+    }
+    .drop-zone.has-files {
+      border-style: solid;
+      border-color: #6b8f7e;
+      background: #f0f7f4;
+    }
+    .preview-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .preview-item {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid #e7e5e4;
+    }
+    .preview-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .preview-item .remove-btn {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 </head>
 <body class="bg-stone-50 text-warm min-h-screen">
@@ -42,37 +102,52 @@
     
     <!-- 1. Identidade Visual -->
     <section class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">
-      <h2 class="text-lg font-semibold text-warm mb-4">📸 Identidade Visual</h2>
-      
-      <label class="block mb-4">
-        <span class="text-sm font-medium text-warm">Logo do negócio (link ou arquivo)</span>
-        <input type="url" name="logo_url" placeholder="https://drive.google.com/seu-logo.png" 
-               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
-      </label>
-      
-      <label class="block mb-4">
-        <span class="text-sm font-medium text-warm">Cores preferidas</span>
-        <input type="text" name="cores_preferidas" placeholder="Ex: preto e dourado"
-               class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
-      </label>
+      <h2 class="text-lg font-semibold text-warm mb-4">📸 Fotos do Negócio</h2>
+      <p class="text-sm text-muted mb-4">Arraste as imagens para as caixas abaixo ou clique para selecionar da galeria.</p>
 
-      <label class="block mb-4">
-        <span class="text-sm font-medium text-warm">Fotos da fachada (links) *</span>
-        <textarea name="fotos_fachada" rows="2" required
-                  placeholder="https://drive.google.com/fachada1.jpg&#10;https://drive.google.com/fachada2.jpg"
-                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
-      </label>
+      <!-- Logo -->
+      <div class="mb-4">
+        <span class="text-sm font-medium text-warm">Logo (1 imagem)</span>
+        <div class="drop-zone mt-1" data-field="logo" data-max="1">
+          <span class="text-3xl">🏷️</span>
+          <span class="text-sm text-muted">Arraste o logo ou clique aqui</span>
+        </div>
+        <input type="hidden" name="logo_url">
+      </div>
 
-      <label class="block mb-4">
-        <span class="text-sm font-medium text-warm">Fotos do interior (links) *</span>
-        <textarea name="fotos_interior" rows="2" required
-                  placeholder="https://drive.google.com/interior1.jpg&#10;https://drive.google.com/interior2.jpg"
-                  class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm"></textarea>
-      </label>
+      <!-- Fachada -->
+      <div class="mb-4">
+        <span class="text-sm font-medium text-warm">Fotos da fachada (até 3) *</span>
+        <div class="drop-zone mt-1" data-field="fotos_fachada" data-max="3" data-required="true">
+          <span class="text-3xl">🏪</span>
+          <span class="text-sm text-muted">Arraste fotos da fachada ou clique aqui</span>
+        </div>
+        <input type="hidden" name="fotos_fachada">
+      </div>
+
+      <!-- Interior -->
+      <div class="mb-4">
+        <span class="text-sm font-medium text-warm">Fotos do interior (até 3) *</span>
+        <div class="drop-zone mt-1" data-field="fotos_interior" data-max="3" data-required="true">
+          <span class="text-3xl">🛋️</span>
+          <span class="text-sm text-muted">Arraste fotos do interior ou clique aqui</span>
+        </div>
+        <input type="hidden" name="fotos_interior">
+      </div>
+
+      <!-- Equipe -->
+      <div class="mb-4">
+        <span class="text-sm font-medium text-warm">Foto da equipe (até 3)</span>
+        <div class="drop-zone mt-1" data-field="foto_equipe" data-max="3">
+          <span class="text-3xl">👥</span>
+          <span class="text-sm text-muted">Arraste fotos da equipe ou clique aqui</span>
+        </div>
+        <input type="hidden" name="foto_equipe">
+      </div>
 
       <label class="block">
-        <span class="text-sm font-medium text-warm">Foto da equipe (link)</span>
-        <input type="url" name="foto_equipe" placeholder="https://drive.google.com/equipe.jpg"
+        <span class="text-sm font-medium text-warm">Cores preferidas</span>
+        <input type="text" name="cores_preferidas" placeholder="Ex: preto e dourado"
                class="mt-1 w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
       </label>
     </section>
@@ -229,39 +304,145 @@
   const leadId = params.get('lead_id') || '';
   const leadName = params.get('lead') || 'Seu Negócio';
   
-  // Show lead name in header
   const nameDisplay = leadId ? `🔗 Lead #${leadId.substring(0,8)} — ${decodeURIComponent(leadName)}` : `👤 ${decodeURIComponent(leadName)}`;
   document.getElementById('lead-name').textContent = nameDisplay;
-  
-  // Store for submission
   window._leadId = leadId;
 
   // Supabase config
   const SUPABASE_URL = 'https://kmuwuefkvkrqjxuqstes.supabase.co/rest/v1/briefings';
   const SUPABASE_KEY = 'sb_publishable_WK5wpfsDd5jthcJhxvZNyA_bNDrbLev';
 
+  // ---- Drop zone logic ----
+  const dropZones = document.querySelectorAll('.drop-zone');
+  // Store files per field: { fieldName: [base64strings] }
+  const uploadedFiles = {};
+
+  dropZones.forEach(zone => {
+    const field = zone.dataset.field;
+    const maxFiles = parseInt(zone.dataset.max) || 1;
+    const hiddenInput = document.querySelector(`input[name="${field}"]`);
+    uploadedFiles[field] = [];
+
+    // Create preview container
+    const previewGrid = document.createElement('div');
+    previewGrid.className = 'preview-grid';
+    zone.appendChild(previewGrid);
+
+    function updateZone() {
+      const files = uploadedFiles[field];
+      hiddenInput.value = JSON.stringify(files);
+      // Update visual state
+      if (files.length > 0) {
+        zone.classList.add('has-files');
+        zone.querySelector('span:first-of-type').style.display = 'none';
+        zone.querySelector('span:last-of-type').textContent = `${files.length} imagem(ns) selecionada(s) — clique para trocar`;
+      } else {
+        zone.classList.remove('has-files');
+        zone.querySelector('span:first-of-type').style.display = '';
+        zone.querySelector('span:last-of-type').textContent = zone.dataset.required ? 
+          'Arraste fotos ou clique aqui' : 'Arraste fotos ou clique aqui';
+      }
+    }
+
+    function renderPreviews() {
+      previewGrid.innerHTML = '';
+      uploadedFiles[field].forEach((b64, idx) => {
+        const item = document.createElement('div');
+        item.className = 'preview-item';
+        const img = document.createElement('img');
+        img.src = b64;
+        item.appendChild(img);
+        const rm = document.createElement('button');
+        rm.className = 'remove-btn';
+        rm.textContent = '×';
+        rm.type = 'button';
+        rm.onclick = (e) => {
+          e.stopPropagation();
+          uploadedFiles[field].splice(idx, 1);
+          renderPreviews();
+          updateZone();
+        };
+        item.appendChild(rm);
+        previewGrid.appendChild(item);
+      });
+    }
+
+    async function processFiles(fileList) {
+      const remaining = maxFiles - uploadedFiles[field].length;
+      if (remaining <= 0) return;
+      const files = Array.from(fileList).slice(0, remaining);
+      
+      for (const file of files) {
+        if (!file.type.startsWith('image/')) continue;
+        const b64 = await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onload = (e) => resolve(e.target.result);
+          reader.readAsDataURL(file);
+        });
+        uploadedFiles[field].push(b64);
+      }
+      renderPreviews();
+      updateZone();
+    }
+
+    // Click to open file picker
+    zone.addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.multiple = maxFiles > 1;
+      input.onchange = () => {
+        if (input.files.length) processFiles(input.files);
+      };
+      input.click();
+    });
+
+    // Drag & drop
+    zone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      zone.classList.add('drag-over');
+    });
+    zone.addEventListener('dragleave', () => {
+      zone.classList.remove('drag-over');
+    });
+    zone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      zone.classList.remove('drag-over');
+      if (e.dataTransfer.files.length) processFiles(e.dataTransfer.files);
+    });
+  });
+
+  // ---- Form submission ----
   document.getElementById('briefing-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');
     const msg = document.getElementById('status-msg');
     
+    // Validate required drop zones
+    for (const zone of dropZones) {
+      if (zone.dataset.required === 'true' && uploadedFiles[zone.dataset.field].length === 0) {
+        msg.textContent = '❌ Fotos obrigatórias: pelo menos 1 imagem em cada caixa marcada com *';
+        msg.className = 'text-center text-sm text-red-500 font-medium mt-4';
+        return;
+      }
+    }
+
     btn.disabled = true;
     btn.textContent = '⏳ Enviando...';
     msg.classList.add('hidden');
 
     const form = e.target;
     
-    // Map form fields to Supabase briefings schema
     const data = {
       lead_id: window._leadId || null,
       lead_nome: leadName,
-      logo_url: form.logo_url.value || null,
+      logo_url: uploadedFiles['logo']?.[0] || null,
       cores_preferidas: form.cores_preferidas.value || null,
-      fotos_cliente: JSON.stringify([
-        form.fotos_fachada.value,
-        form.fotos_interior.value,
-        form.foto_equipe.value
-      ].filter(Boolean)),
+      fotos_cliente: JSON.stringify({
+        fachada: uploadedFiles['fotos_fachada'] || [],
+        interior: uploadedFiles['fotos_interior'] || [],
+        equipe: uploadedFiles['foto_equipe'] || []
+      }),
       servicos_precos: JSON.stringify(
         form.servicos.value.split('\n').filter(s => s.trim()).map(s => {
           const parts = s.split('-').map(p => p.trim());
@@ -298,6 +479,15 @@
         btn.textContent = '✅ Enviado!';
         btn.className = 'w-full bg-green-500 text-white font-semibold text-lg py-4 rounded-2xl cursor-default';
         form.reset();
+        // Clear all uploads
+        Object.keys(uploadedFiles).forEach(k => uploadedFiles[k] = []);
+        dropZones.forEach(z => {
+          z.querySelector('.preview-grid').innerHTML = '';
+          z.classList.remove('has-files');
+          z.querySelector('span:first-of-type').style.display = '';
+          z.querySelector('span:last-of-type').textContent = z.dataset.required ? 
+            'Arraste fotos ou clique aqui' : 'Arraste fotos ou clique aqui';
+        });
       } else {
         throw new Error('Erro ao enviar');
       }
