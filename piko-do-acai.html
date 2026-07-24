@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piko do Açaí | Açaí em Camboriú</title>
+    <title>Piko do Açaí | Açaí Artesanal em Camboriú</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <meta property="og:image" content="https://pixabay.com/get/g7687f1f7a2b51bbf8fd870f38cbe409c041fb43608f2cbe2fbfc5b5d3ca3fb0af31b3939abdb14d48c0f454dc040ccdec6b5a84ffbec0000d5cf1a2a51e7ae9b_640.jpg">
-    <meta name="twitter:image" content="https://pixabay.com/get/g7687f1f7a2b51bbf8fd870f38cbe409c041fb43608f2cbe2fbfc5b5d3ca3fb0af31b3939abdb14d48c0f454dc040ccdec6b5a84ffbec0000d5cf1a2a51e7ae9b_640.jpg">
+    <meta property="og:image" content="https://jocaval.github.io/sites-prototipo/fachada-piko.jpg">
+    <meta name="twitter:image" content="https://jocaval.github.io/sites-prototipo/fachada-piko.jpg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; background: #0d0d0d; color: #e0d8f0; line-height: 1.6; }
 
-        nav { position: fixed; top: 0; width: 100%; background: #0d0d0d; z-index: 1000; padding: 16px 0; border-bottom: 1px solid #1a1a2e; }
+        nav { position: fixed; top: 0; width: 100%; background: #0d0d0d; z-index: 1000; padding: 12px 0; border-bottom: 1px solid #1a1a2e; }
         .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-size: 22px; font-weight: 700; color: #8E44AD; letter-spacing: 1px; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; }
+        .nav-logo img { height: 40px; width: auto; }
+        .nav-logo span { font-size: 20px; font-weight: 700; color: #8E44AD; letter-spacing: 1px; }
         .nav-links { display: flex; gap: 32px; list-style: none; }
         .nav-links a { color: #999; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #8E44AD; }
@@ -59,7 +61,7 @@
         .menu-card-body { padding: 20px; }
         .menu-card h3 { font-size: 18px; color: #fff; margin-bottom: 8px; font-weight: 600; }
         .menu-card p { color: #888; font-size: 13px; line-height: 1.6; }
-        .menu-card-price { color: #8E44AD; font-weight: 700; font-size: 16px; margin-top: 12px; }
+        .menu-card-price { color: #8E44AD; font-weight: 700; font-size: 22px; margin-top: 12px; }
 
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
         .testimonial-card { background: #1a1a1a; border: 1px solid #222; border-radius: 8px; padding: 28px; }
@@ -67,7 +69,7 @@
         .testimonial-card p { color: #bbb; font-size: 14px; font-style: italic; line-height: 1.7; margin-bottom: 16px; }
         .testimonial-author { color: #fff; font-weight: 600; font-size: 14px; }
 
-        .social-links { display: flex; gap: 16px; margin-top: 16px; }
+        .social-links { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
         .social-link { display: inline-flex; align-items: center; gap: 8px; background: #1a1a1a; border: 1px solid #333; color: #ccc; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500; transition: border-color 0.3s, color 0.3s; }
         .social-link:hover { border-color: #8E44AD; color: #8E44AD; }
 
@@ -96,7 +98,10 @@
 <body>
     <nav>
         <div class="nav-inner">
-            <div class="nav-logo">Piko do Açaí</div>
+            <div class="nav-logo">
+                <img src="logo-piko.png" alt="Piko do Açaí">
+                <span>Piko do Açaí</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#cardapio">Cardápio</a></li>
@@ -112,19 +117,19 @@
             <div class="hero-badge">Açaí Artesanal · Monte Alegre</div>
             <h1>Piko do Açaí<br><span>Camboriú</span></h1>
             <p class="hero-address">Rua Monte Sotara, 1000 - Monte Alegre, Camboriú - SC</p>
-            <p class="hero-tagline">Açaí cremoso, toppings frescos e aquela energia que só um açaí raiz proporciona. Do bowl ao copo, cada pedido é feito na hora com os melhores ingredientes.</p>
+            <p class="hero-tagline">Açaí cremoso, toppings frescos e aquele sabor que só um açaí de verdade tem. Feito com polpa premium, do jeito que você merece.</p>
             <div class="hero-highlights">
                 <div class="hero-highlight">
                     <div class="hero-highlight-icon">🍇</div>
-                    <div class="hero-highlight-text">Açaí 100% natural</div>
+                    <div class="hero-highlight-text">Polpa Premium</div>
                 </div>
                 <div class="hero-highlight">
-                    <div class="hero-highlight-icon">🍌</div>
-                    <div class="hero-highlight-text">Frutas frescas</div>
+                    <div class="hero-highlight-icon">💜</div>
+                    <div class="hero-highlight-text">Família</div>
                 </div>
                 <div class="hero-highlight">
-                    <div class="hero-highlight-icon">⚡</div>
-                    <div class="hero-highlight-text">Delivery rápido</div>
+                    <div class="hero-highlight-icon">🛵</div>
+                    <div class="hero-highlight-text">Delivery</div>
                 </div>
             </div>
             <a href="https://wa.me/5547997614412?text=Olá!%20Quero%20fazer%20um%20pedido%20no%20Piko%20do%20Açaí!" class="hero-cta" target="_blank">🍇 Pedir pelo WhatsApp</a>
@@ -134,26 +139,25 @@
     <section id="sobre">
         <div class="section-inner">
             <div class="section-tag">Nossa História</div>
-            <h2 class="section-title">Paixão pelo Açaí</h2>
-            <p class="section-subtitle">O Piko do Açaí nasceu pra trazer o melhor açaí artesanal pro Monte Alegre — sem mistério, só qualidade.</p>
+            <h2 class="section-title">Nascido na Pandemia,<br>Crescido com Amor</h2>
+            <p class="section-subtitle">O Piko do Açaí é um negócio de família que nasceu da necessidade e virou paixão.</p>
             <div class="about-grid">
-                <img src="fachada-piko.jpg" class="about-image" alt="Fachada Piko do Açaí">
+                <img src="fachada-piko.jpg" class="about-image" alt="Piko do Açaí - Fachada">
                 <div>
                     <p style="color:#bbb;margin-bottom:24px;font-size:15px;line-height:1.8;">
-                        Localizado no <strong style="color:#8E44AD;">Monte Alegre</strong>, o <strong style="color:#8E44AD;">Piko do Açaí</strong> é o point de quem busca açaí cremoso de verdade. 
-                        Trabalhamos com polpa premium, frutas selecionadas e aquele atendimento que faz você voltar sempre.
+                        <strong style="color:#8E44AD;">Começamos em meio à pandemia</strong>, quando sentimos a necessidade de ter uma renda extra. No início, o atendimento era apenas delivery — e aos poucos fomos conquistando a confiança dos clientes com um açaí de qualidade e um atendimento diferenciado.
                     </p>
                     <p style="color:#bbb;font-size:15px;line-height:1.8;">
-                        Nosso diferencial é a montagem personalizada — você escolhe os toppings, a gente capricha na quantidade.
+                        Hoje, atendemos com muito carinho na <strong style="color:#8E44AD;">Rua Monte Sotara, 1000</strong>, no Monte Alegre. Cada bowl é preparado com polpa premium e frutas frescas selecionadas.
                     </p>
                     <div class="about-features">
                         <div class="about-feature">
-                            <div class="about-feature-icon">🍇</div>
-                            <div><h4>Polpa Premium</h4><p>Açaí puro, cremoso e sem gelo</p></div>
+                            <div class="about-feature-icon">👨‍👩‍👧</div>
+                            <div><h4>Empresa Familiar</h4><p>Tocamos juntos — marido e mulher</p></div>
                         </div>
                         <div class="about-feature">
-                            <div class="about-feature-icon">🍓</div>
-                            <div><h4>Toppings Frescos</h4><p>Frutas, granola, leite em pó e mais</p></div>
+                            <div class="about-feature-icon">🍇</div>
+                            <div><h4>Polpa Premium</h4><p>Açaí puro, cremoso e sem gelo</p></div>
                         </div>
                         <div class="about-feature">
                             <div class="about-feature-icon">🛵</div>
@@ -173,30 +177,30 @@
         <div class="section-inner">
             <div class="section-tag">Cardápio</div>
             <h2 class="section-title">Nossos Açaís</h2>
-            <p class="section-subtitle">Cada bowl é montado na hora, do seu jeito. Veja os favoritos da casa.</p>
+            <p class="section-subtitle">Do médio ao grande, cada bowl é montado na hora com os melhores ingredientes.</p>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <img src="acai-card-1.jpg" alt="Açaí Tradicional" loading="lazy">
+                    <img src="acai-card-1.jpg" alt="Açaí Médio" loading="lazy">
                     <div class="menu-card-body">
-                        <h3>Açaí Tradicional</h3>
-                        <p>300ml de açaí puro com granola, banana, morango e leite condensado.</p>
-                        <div class="menu-card-price">Sob consulta</div>
+                        <h3>Açaí Médio</h3>
+                        <p>Açaí cremoso com granola, banana, morango e leite condensado. Perfeito pra matar a vontade.</p>
+                        <div class="menu-card-price">R$ 10,00</div>
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img src="acai-card-2.jpg" alt="Açaí Power" loading="lazy">
+                    <img src="acai-card-2.jpg" alt="Açaí Grande" loading="lazy">
                     <div class="menu-card-body">
-                        <h3>Açaí Power</h3>
-                        <p>500ml de açaí turbinado com whey, pasta de amendoim, granola e banana.</p>
-                        <div class="menu-card-price">Sob consulta</div>
+                        <h3>Açaí Grande</h3>
+                        <p>O favorito da casa! Açaí premium turbinado com frutas frescas, granola especial e coberturas.</p>
+                        <div class="menu-card-price">R$ 17,00</div>
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img src="acai-card-3.jpg" alt="Açaí Bowl Completo" loading="lazy">
+                    <img src="acai-card-3.jpg" alt="Montagem Personalizada" loading="lazy">
                     <div class="menu-card-body">
-                        <h3>Açaí Bowl Completo</h3>
-                        <p>700ml de açaí com frutas variadas, granola especial, mel e castanhas.</p>
-                        <div class="menu-card-price">Sob consulta</div>
+                        <h3>Monte o Seu</h3>
+                        <p>Escolha seus toppings favoritos: paçoca, leite em pó, Nutella, morango, kiwi e muito mais.</p>
+                        <div class="menu-card-price">A partir de R$ 10,00</div>
                     </div>
                 </div>
             </div>
@@ -216,7 +220,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p>"O bowl completo é sensacional. Dá pra dois e ainda sobra. Atendimento nota mil!"</p>
+                    <p>"Atendimento familiar faz toda diferença. O açaí grande de 17 reais é gigante e muito bem servido!"</p>
                     <div class="testimonial-author">— Cliente verificado</div>
                 </div>
                 <div class="testimonial-card">
@@ -232,7 +236,7 @@
         <div class="section-inner">
             <div class="section-tag">Contato</div>
             <h2 class="section-title">Fala com a gente</h2>
-            <p class="section-subtitle">Faça seu pedido pelo WhatsApp ou siga a gente nas redes.</p>
+            <p class="section-subtitle">Faça seu pedido pelo WhatsApp ou siga a gente nas redes sociais.</p>
             <div class="contact-grid">
                 <div>
                     <div class="contact-info-item">
@@ -276,7 +280,8 @@
     </section>
 
     <footer>
-        <p>© 2026 Piko do Açaí Camboriú · Rua Monte Sotara, 1000 - Monte Alegre · (47) 99761-4412</p>
+        <p>© 2026 Piko do Açaí · Rua Monte Sotara, 1000 - Monte Alegre, Camboriú - SC</p>
+        <p style="margin-top:8px;">👨‍👩‍👧 Negócio familiar · (47) 99761-4412</p>
         <p style="margin-top:8px;">
             <a href="https://www.instagram.com/pikodoacai" target="_blank">Instagram</a> · 
             <a href="https://www.facebook.com/share/1B3HNySeC5/" target="_blank">Facebook</a>
