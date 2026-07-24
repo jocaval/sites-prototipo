@@ -435,7 +435,6 @@
     
     const data = {
       lead_id: window._leadId || null,
-      lead_nome: leadName,
       logo_url: uploadedFiles['logo']?.[0] || null,
       cores_preferidas: form.cores_preferidas.value || null,
       fotos_cliente: JSON.stringify({
@@ -479,7 +478,6 @@
         btn.textContent = '✅ Enviado!';
         btn.className = 'w-full bg-green-500 text-white font-semibold text-lg py-4 rounded-2xl cursor-default';
         form.reset();
-        // Clear all uploads
         Object.keys(uploadedFiles).forEach(k => uploadedFiles[k] = []);
         dropZones.forEach(z => {
           z.querySelector('.preview-grid').innerHTML = '';
@@ -489,7 +487,9 @@
             'Arraste fotos ou clique aqui' : 'Arraste fotos ou clique aqui';
         });
       } else {
-        throw new Error('Erro ao enviar');
+        const errText = await resp.text();
+        console.error('Supabase error:', resp.status, errText);
+        throw new Error(errText || 'Erro ' + resp.status);
       }
     } catch (err) {
       msg.textContent = '❌ Erro ao enviar. Tente novamente ou fale com nosso vendedor.';
