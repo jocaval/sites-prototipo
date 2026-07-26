@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Silva | Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple: #533afd;
+  --purple-dark: #4434d4;
+  --navy: #061b31;
+  --slate: #64748d;
+  --border: #e5edf5;
+  --shadow-blue: rgba(50,50,93,0.25);
+  --shadow-black: rgba(0,0,0,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Source Sans 3', system-ui, sans-serif; color: var(--navy); background: #fff; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1080px; margin: 0 auto; padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: var(--navy); letter-spacing: -0.3px; }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a { font-size: 14px; font-weight: 400; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--purple); }
+.nav-cta { background: var(--purple); color: #fff; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 400; transition: background 0.2s; }
+.nav-cta:hover { background: var(--purple-dark); }
+
+/* HERO */
+.hero { padding: 160px 32px 100px; text-align: center; max-width: 1080px; margin: 0 auto; }
+.hero-badge { display: inline-block; color: var(--purple); font-size: 13px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 56px); font-weight: 400; line-height: 1.08; color: var(--navy); letter-spacing: -1px; }
+.hero h1 span { color: var(--purple); }
+.hero p { font-size: 18px; font-weight: 300; color: var(--slate); max-width: 520px; margin: 24px auto 40px; line-height: 1.45; }
+.hero-stats { display: flex; gap: 48px; justify-content: center; margin-bottom: 44px; }
+.hero-stat { text-align: center; }
+.hero-stat-num { font-size: 32px; font-weight: 300; color: var(--navy); letter-spacing: -0.5px; }
+.hero-stat-label { font-size: 13px; color: var(--slate); font-weight: 400; margin-top: 4px; }
+.hero-cta { display: inline-block; background: var(--purple); color: #fff; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-size: 16px; font-weight: 400; transition: background 0.2s, box-shadow 0.2s; }
+.hero-cta:hover { background: var(--purple-dark); box-shadow: var(--shadow-blue) 0px 10px 20px -10px, var(--shadow-black) 0px 6px 12px -6px; }
+
+/* SECTIONS */
+section { padding: 100px 32px; }
+.section-inner { max-width: 1080px; margin: 0 auto; }
+.section-label { font-size: 13px; font-weight: 400; color: var(--purple); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 400; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.5px; }
+.section-sub { font-size: 17px; font-weight: 300; color: var(--slate); max-width: 560px; margin-bottom: 56px; line-height: 1.5; }
+
+/* CARDS */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.card { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 32px; transition: box-shadow 0.25s; }
+.card:hover { box-shadow: var(--shadow-blue) 0px 30px 45px -30px, var(--shadow-black) 0px 18px 36px -18px; }
+.card-icon { font-size: 28px; margin-bottom: 16px; }
+.card h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.2px; }
+.card p { font-size: 15px; font-weight: 300; color: var(--slate); line-height: 1.5; }
+.card-price { font-size: 20px; font-weight: 300; color: var(--purple); margin-top: 16px; }
+
+/* TESTIMONIAL */
+.testimonials { background: #f8fafc; }
+.testimonial-card { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 28px; }
+.testimonial-card .stars { color: var(--purple); font-size: 15px; margin-bottom: 12px; }
+.testimonial-card p { font-size: 15px; font-weight: 300; color: var(--slate); font-style: italic; line-height: 1.6; margin-bottom: 16px; }
+.testimonial-card .author { font-size: 14px; font-weight: 400; color: var(--navy); }
+
+/* FOOTER */
+footer { background: #1c1e54; color: rgba(255,255,255,0.7); padding: 48px 32px; text-align: center; font-size: 14px; font-weight: 300; }
+footer a { color: #fff; text-decoration: none; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero-stats { gap: 28px; }
+  .cards { grid-template-columns: 1fr; }
+  section { padding: 64px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Barbearia Silva</div>
+    <ul class="nav-links">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="https://wa.me/5547996193515" class="nav-cta">Agendar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Premium · Bairro Areias</div>
+  <h1>Corte que <span>impressiona</span>,<br>barba que <span>marca presença</span></h1>
+  <p>Barbearia premium em Camboriú. Atendimento com hora marcada, ambiente climatizado e os melhores profissionais da região.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">5.0</div><div class="hero-stat-label">Nota Google</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Clientes</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">Areias</div><div class="hero-stat-label">Bairro</div></div>
+  </div>
+  <a href="https://wa.me/5547996193515" class="hero-cta">Agendar pelo WhatsApp →</a>
+</section>
+
+<section id="servicos">
+  <div class="section-inner">
+    <div class="section-label">Serviços</div>
+    <h2 class="section-title">Cada detalhe importa</h2>
+    <p class="section-sub">Do clássico ao contemporâneo, serviços executados com precisão.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">✂️</div>
+        <h3>Corte Premium</h3>
+        <p>Tesoura, máquina e finalização com produtos profissionais. Consultoria de estilo incluída.</p>
+        <div class="card-price">Sob consulta</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧔</div>
+        <h3>Barba Completa</h3>
+        <p>Toalha quente, navalhete e balm hidratante. Desenho personalizado.</p>
+        <div class="card-price">Sob consulta</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💈</div>
+        <h3>Combo Corte + Barba</h3>
+        <p>O favorito da casa. Corte e barba com valor especial no pacote completo.</p>
+        <div class="card-price">Sob consulta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="depoimentos">
+  <div class="section-inner">
+    <div class="section-label">Depoimentos</div>
+    <h2 class="section-title">Quem confia, recomenda</h2>
+    <div class="cards" style="margin-top:40px;">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Melhor barbearia de Camboriú. Ambiente impecável e atendimento nota 10. Não troco por nada."</p>
+        <div class="author">— Cliente verificado</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Profissionais que realmente entendem de estilo. Cada visita é uma experiência premium."</p>
+        <div class="author">— Cliente verificado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Barbearia Silva · R. Bahia, Bairro Areias · Camboriú - SC</p>
+  <p style="margin-top:12px;"><a href="https://wa.me/5547996193515">WhatsApp (47) 99619-3515</a></p>
+</footer>
+
+</body>
+</html>
