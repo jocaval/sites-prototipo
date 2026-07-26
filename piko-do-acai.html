@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piko do Açaí | Açaí Artesanal em Camboriú</title>
-    <meta name="description" content="Piko do Açaí Camboriú — Açaí artesanal premium no Monte Alegre. Açaí médio R$10 e grande R$17. Delivery e atendimento familiar. Ter a Sáb 11h-22h.">
+    <title>Piko do Acai Camboriu | Açaí Artesanal em Camboriú</title>
+    <meta name="description" content="Piko do Acai Camboriu Camboriú — Açaí artesanal premium no Monte Alegre. Açaí médio R$10 e grande R$17. Delivery e atendimento familiar. Ter a Sáb 11h-22h.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍇</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,9 +15,10 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; background: #0d0d0d; color: #e0d8f0; line-height: 1.6; }
 
-        nav { position: fixed; top: 0; width: 100%; background: #0d0d0d; z-index: 1000; padding: 12px 0; border-bottom: 1px solid #1a1a2e; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(13,13,13,0.92); backdrop-filter: blur(12px); z-index: 1000; padding: 14px 0; border-bottom: 1px solid #1a1a2e; box-shadow: 0 2px 20px rgba(142,68,173,0.15); }
         .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { display: flex; align-items: center; gap: 10px; }
+        .nav-logo span { text-shadow: 0 0 12px rgba(142,68,173,0.4); }
         .nav-logo img { height: 40px; width: auto; }
         .nav-logo span { font-size: 20px; font-weight: 700; color: #8E44AD; letter-spacing: 1px; }
         .nav-links { display: flex; gap: 32px; list-style: none; }
@@ -57,8 +58,8 @@
 
         .menu-section { background: #111; }
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .menu-card { background: #1a1a1a; border: 1px solid #222; border-radius: 8px; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
-        .menu-card:hover { transform: translateY(-4px); border-color: #8E44AD; }
+        .menu-card { background: #1a1a1a; border: 1px solid #222; border-radius: 12px; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+        .menu-card:hover { transform: translateY(-6px); border-color: #8E44AD; box-shadow: 0 8px 30px rgba(142,68,173,0.2); }
         .menu-card img { width: 100%; height: 180px; object-fit: cover; }
         .menu-card-body { padding: 20px; }
         .menu-card h3 { font-size: 18px; color: #fff; margin-bottom: 8px; font-weight: 600; }
@@ -101,8 +102,8 @@
     <nav>
         <div class="nav-inner">
             <div class="nav-logo">
-                <img src="logo-piko.png" alt="Piko do Açaí">
-                <span>Piko do Açaí</span>
+                <img src="logo-piko.png" alt="Piko do Acai Camboriu">
+                <span>Piko do Acai Camboriu</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
@@ -117,8 +118,8 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">Açaí Artesanal · Monte Alegre</div>
-            <h1>Piko do Açaí<br><span>Camboriú</span></h1>
-            <p class="hero-address">Rua Monte Sotara, 1000 - Monte Alegre, Camboriú - SC</p>
+            <h1>Piko do Acai Camboriu<br><span>Camboriú</span></h1>
+            <p class="hero-address">{{RUA}} - {{BAIRRO_CIDADE}}</p>
             <p class="hero-tagline">Açaí cremoso, toppings frescos e aquele sabor que só um açaí de verdade tem. Feito com polpa premium, do jeito que você merece.</p>
             <div class="hero-highlights">
                 <div class="hero-highlight">
@@ -142,15 +143,15 @@
         <div class="section-inner">
             <div class="section-tag">Nossa História</div>
             <h2 class="section-title">Nascido na Pandemia,<br>Crescido com Amor</h2>
-            <p class="section-subtitle">O Piko do Açaí é um negócio de família que nasceu da necessidade e virou paixão.</p>
+            <p class="section-subtitle">O Piko do Acai Camboriu é um negócio de família que nasceu da necessidade e virou paixão.</p>
             <div class="about-grid">
-                <img src="fachada-piko.jpg" class="about-image" alt="Piko do Açaí - Fachada">
+                <img src="fachada-piko.jpg" class="about-image" alt="Piko do Acai Camboriu - Fachada">
                 <div>
                     <p style="color:#bbb;margin-bottom:24px;font-size:15px;line-height:1.8;">
                         <strong style="color:#8E44AD;">Começamos em meio à pandemia</strong>, quando sentimos a necessidade de ter uma renda extra. No início, o atendimento era apenas delivery — e aos poucos fomos conquistando a confiança dos clientes com um açaí de qualidade e um atendimento diferenciado.
                     </p>
                     <p style="color:#bbb;font-size:15px;line-height:1.8;">
-                        Hoje, atendemos com muito carinho na <strong style="color:#8E44AD;">Rua Monte Sotara, 1000</strong>, no Monte Alegre. Cada bowl é preparado com polpa premium e frutas frescas selecionadas.
+                        Hoje, atendemos com muito carinho na <strong style="color:#8E44AD;">{{RUA}}</strong>, no Monte Alegre. Cada bowl é preparado com polpa premium e frutas frescas selecionadas.
                     </p>
                     <div class="about-features">
                         <div class="about-feature">
@@ -213,7 +214,7 @@
         <div class="section-inner">
             <div class="section-tag">Avaliações</div>
             <h2 class="section-title">Quem provou, aprovou</h2>
-            <p class="section-subtitle">Veja o que a galera acha do Piko do Açaí.</p>
+            <p class="section-subtitle">Veja o que a galera acha do Piko do Acai Camboriu.</p>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
@@ -243,11 +244,11 @@
                 <div>
                     <div class="contact-info-item">
                         <div class="contact-icon">📍</div>
-                        <div><h3>Endereço</h3><p>Rua Monte Sotara, 1000 - Monte Alegre, Camboriú - SC</p></div>
+                        <div><h3>Endereço</h3><p>{{RUA}} - {{BAIRRO_CIDADE}}</p></div>
                     </div>
                     <div class="contact-info-item">
                         <div class="contact-icon">📱</div>
-                        <div><h3>WhatsApp</h3><p>(47) 99761-4412</p></div>
+                        <div><h3>WhatsApp</h3><p>{{TELEFONE_FORMATADO}}</p></div>
                     </div>
                     <div class="contact-info-item">
                         <div class="contact-icon">🕐</div>
@@ -282,8 +283,8 @@
     </section>
 
     <footer>
-        <p>© 2026 Piko do Açaí · Rua Monte Sotara, 1000 - Monte Alegre, Camboriú - SC</p>
-        <p style="margin-top:8px;">👨‍👩‍👧 Negócio familiar · (47) 99761-4412</p>
+        <p>© 2026 Piko do Acai Camboriu · {{RUA}} - {{BAIRRO_CIDADE}}</p>
+        <p style="margin-top:8px;">👨‍👩‍👧 Negócio familiar · {{TELEFONE_FORMATADO}}</p>
         <p style="margin-top:8px;">
             <a href="https://www.instagram.com/pikodoacai" target="_blank">Instagram</a> · 
             <a href="https://www.facebook.com/share/1B3HNySeC5/" target="_blank">Facebook</a>
