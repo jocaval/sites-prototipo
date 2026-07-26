@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piko do Açaí</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a0a2e;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8E44AD 0%, #5a2d7a 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(142, 68, 173, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4a5e8;
+        }
+
+        section {
+            padding: 6rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d1050 50%, #1a0a2e 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #d4a5e8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #b8a0c8;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #8E44AD 0%, #9b59b6 100%);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(142, 68, 173, 0.6);
+        }
+
+        #sobre {
+            background: #2d1050;
+            padding: 6rem 2rem;
+            border-radius: 20px;
+            margin: 2rem auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #d4a5e8;
+            margin-bottom: 3rem;
+        }
+
+        .sobre-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sobre-texto {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.1rem;
+            color: #e0d0f0;
+            line-height: 1.8;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 1rem;
+        }
+
+        #cardapio {
+            padding: 6rem 2rem;
+        }
+
+        .cardapio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .cardapio-item {
+            background: linear-gradient(145deg, #2d1050 0%, #1a0a2e 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid #8E44AD;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cardapio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(142, 68, 173, 0.4);
+        }
+
+        .cardapio-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .cardapio-item h3 {
+            font-size: 1.5rem;
+            color: #d4a5e8;
+            margin-bottom: 0.5rem;
+        }
+
+        .cardapio-item p {
+            color: #b8a0c8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .preco {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #9b59b6;
+        }
+
+        #contato {
+            background: #2d1050;
+            padding: 6rem 2rem;
+            border-radius: 20px;
+            margin: 2rem auto;
+        }
+
+        .contato-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contato-info {
+            text-align: center;
+        }
+
+        .contato-info h3 {
+            font-size: 1.5rem;
+            color: #d4a5e8;
+            margin-bottom: 1.5rem;
+        }
+
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #25D366;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .mapa-container {
+            background: #1a0a2e;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #8E44AD;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8E44AD;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #8E44AD 0%, #5a2d7a 100%);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Piko do Açaí</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Piko do Açaí</h1>
+            <p>O melhor açaí da cidade, feito com amor e ingredientes selecionados para você!</p>
+            <a href="#cardapio" class="cta-button">Ver Cardápio</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2 class="section-title">Sobre Nós</h2>
+        <div class="sobre-content">
+            <div class="sobre-texto">
+                <p>
+                    O Piko do Açaí nasceu da paixão por oferecer o melhor açaí da região. 
+                    Utilizamos apenas ingredientes frescos e de alta qualidade para preparar 
+                    nossos produtos.
+                </p>
+                <p>
+                    Nossa missão é proporcionar uma experiência única e saborosa para todos 
+                    os nossos clientes, com atendimento carinhoso e ambiente agradável.
+                </p>
+                <p>
+                    Venha nos conhecer e descobrir por que somos a escolha número um em açaí!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cardapio">
+        <h2 class="section-title">Cardápio</h2>
+        <div class="cardapio-grid">
+            <div class="cardapio-item">
+                <div class="cardapio-icon">🫐</div>
+                <h3>Açaí Médio</h3>
+                <p>Açaí cremoso com banana e granola</p>
+                <div class="preco">R$ 10</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-icon">🍇</div>
+                <h3>Açaí Grande</h3>
+                <p>Açaí cremoso com banana, granola e morango</p>
+                <div class="preco">R$ 7</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-icon">🍓</div>
+                <h3>Açaí Especial</h3>
+                <p>Açaí cremoso com frutas frescos e leite condensado</p>
+                <div class="preco">R$ 15</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2 class="section-title">Contato</h2>
+        <div class="contato-content">
+            <div class="contato-info">
+                <h3>Fale Conosco</h3>
+                <p style="color: #b8a0c8; margin-bottom: 1.5rem;">Estamos prontos para atender você!</p>
+                <a href="https://wa.me/5547997614412" class="whatsapp-link" target="_blank">
+                    📱 WhatsApp
+                </a>
+            </div>
+            <div class="contato-info">
+                <h3>Localização</h3>
+                <div class="mapa-container">
+                    <p>📍 Mapa será inserido aqui</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Piko do Açaí. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
