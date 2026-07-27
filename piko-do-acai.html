@@ -3,46 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piko do Açaí Camboriú — Açaí artesanal em Camboriú/SC</title>
-<meta name="description" content="Piko do Açaí Camboriú — açaí artesanal em Monte Alegre, Camboriú/SC. Atendimento terça a sábado, 11h às 22h. Peça pelo WhatsApp (47) 99761-4412.">
-<meta property="og:type" content="business.business">
-<meta property="og:title" content="Piko do Açaí Camboriú — Açaí artesanal">
-<meta property="og:description" content="Açaí artesanal em Camboriú/SC. Ter a Sáb, 11h às 22h. Peça pelo WhatsApp (47) 99761-4412.">
-<meta property="og:url" content="https://pikodoacai.com.br">
-<meta property="og:image" content="logo.png">
+<title>Piko do Açaí Camboriú — Açaí artesanal em Camboriú</title>
+<meta name="description" content="Piko do Açaí Camboriú — açaí artesanal no Monte Alegre. Atendimento terça a sábado das 11h às 22h. Retire no balcão ou peça pelo WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Piko do Açaí Camboriú">
+<meta property="og:description" content="Açaí artesanal em Camboriú. Funcionamento terça a sábado, 11h às 22h.">
+<meta property="og:image" content="acai-card-1.jpg?v=3">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Piko do Açaí Camboriú">
-<meta name="twitter:description" content="Açaí artesanal em Camboriú/SC. Peça pelo WhatsApp (47) 99761-4412.">
-<meta name="twitter:image" content="logo.png">
+<meta name="twitter:description" content="Açaí artesanal em Camboriú. Funcionamento terça a sábado, 11h às 22h.">
+<meta name="twitter:image" content="acai-card-1.jpg?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Piko do Açaí Camboriú",
-  "image": "logo.png",
+  "image": "fachada-piko.jpg",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "R. Monte Sotara, 1000 - Monte Alegre",
-    "addressLocality": "Camboriu",
+    "addressLocality": "Camboriú",
     "addressRegion": "SC",
     "postalCode": "88348-702",
     "addressCountry": "BR"
   },
-  "telephone": "+5547997614412",
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
-    "opens": "11:00",
-    "closes": "22:00"
-  }],
-  "priceRange": "$$",
-  "sameAs": [
-    "https://www.instagram.com/pikodoacai",
-    "https://www.facebook.com/share/1B3HNySeC5/"
-  ]
+  "telephone": "+55 47 99761-4412",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "11:00",
+      "closes": "22:00"
+    }
+  ],
+  "priceRange": "Sob consulta",
+  "servesCuisine": "Açaí",
+  "url": "https://www.instagram.com/pikodoacai"
 }
 </script>
 <style>
@@ -50,8 +49,8 @@
   --bg:#0a0a0f;
   --surface:#13101a;
   --card:#1a1525;
-  --primary:#8E44AD;
-  --accent:#E67E22;
+  --purple:#8E44AD;
+  --amber:#E67E22;
   --text:#f0eaf5;
   --muted:#b8aec8;
   --border:rgba(142,68,173,0.18);
@@ -63,330 +62,434 @@ body{
   color:var(--text);
   font-family:'Poppins',sans-serif;
   font-weight:300;
-  line-height:1.6;
+  line-height:1.65;
   overflow-x:hidden;
 }
-h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:-0.01em}
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  line-height:1.1;
+}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.eyebrow{
+  display:inline-block;
+  font-family:'Poppins',sans-serif;
+  font-size:.75rem;
+  font-weight:500;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--amber);
+  margin-bottom:1.25rem;
+}
+.section{padding:6rem 0}
+.section.surface{background:var(--surface)}
 
-/* Header */
+/* HEADER */
 header{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(10,10,15,0.72);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(10,10,15,0.65);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.logo{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-weight:900;font-size:1.25rem}
-.logo-mark{
-  width:38px;height:38px;border-radius:50%;
-  background:radial-gradient(circle at 30% 30%, var(--accent), var(--primary) 70%);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;color:#fff;font-family:'Playfair Display',serif;
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 2rem;max-width:1200px;margin:0 auto;
 }
-.logo span{color:var(--accent)}
-.nav-links{display:flex;gap:32px;font-size:.92rem;font-weight:400}
-.nav-links a{color:var(--muted);transition:color .2s}
+.brand{display:flex;align-items:center;gap:.75rem;font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem;letter-spacing:.01em}
+.brand-mark{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--purple),var(--amber));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.1rem;font-weight:800;font-family:'Playfair Display',serif;
+}
+.nav-links{display:flex;gap:2rem;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .nav-links a:hover{color:var(--text)}
 .nav-cta{
-  background:var(--primary);color:#fff;padding:10px 22px;border-radius:50px;
-  font-weight:500;font-size:.9rem;
+  background:var(--purple);color:#fff;
+  padding:.6rem 1.3rem;border-radius:999px;
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+  transition:background .25s ease;
 }
-.nav-cta:hover{background:#7d3a99}
-@media(max-width:768px){.nav-links{display:none}}
+.nav-cta:hover{background:var(--amber)}
+@media(max-width:760px){.nav-links{display:none}}
 
-/* Hero */
+/* HERO */
 .hero{
-  min-height:100vh;display:flex;align-items:center;position:relative;
+  min-height:100vh;
   background:
-    radial-gradient(circle at 80% 20%, rgba(142,68,173,0.35), transparent 45%),
-    radial-gradient(circle at 15% 75%, rgba(230,126,34,0.18), transparent 40%),
-    linear-gradient(135deg,#0a0a0f 0%, #13101a 60%, #1a1525 100%);
-  padding:120px 0 80px;
+    radial-gradient(ellipse at 20% 10%, rgba(142,68,173,0.35), transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(230,126,34,0.22), transparent 55%),
+    linear-gradient(180deg,#0a0a0f 0%, #13101a 100%);
+  position:relative;
+  display:flex;align-items:center;
+  padding-top:80px;
 }
 .hero::before{
   content:"";position:absolute;inset:0;
   background-image:radial-gradient(rgba(142,68,173,0.08) 1px, transparent 1px);
-  background-size:28px 28px;
-  opacity:.5;pointer-events:none;
+  background-size:32px 32px;
+  opacity:.6;pointer-events:none;
 }
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;position:relative;z-index:1}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(142,68,173,0.15);border:1px solid var(--border);
-  padding:6px 16px;border-radius:50px;font-size:.8rem;color:var(--muted);
-  margin-bottom:24px;font-weight:400;
+.hero-grid{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center;
+  position:relative;z-index:2;
 }
-.hero-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
-.hero h1{font-size:clamp(2.6rem,5.5vw,4.6rem);line-height:1.05;margin-bottom:20px}
-.hero h1 em{color:var(--accent);font-style:italic}
-.hero p{color:var(--muted);font-size:1.08rem;max-width:520px;margin-bottom:36px}
-.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero h1{
+  font-size:clamp(2.6rem,6vw,5.2rem);
+  margin-bottom:1.5rem;
+}
+.hero h1 span{
+  display:block;
+  background:linear-gradient(120deg,var(--amber),#F39C12);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-style:italic;
+}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:520px;margin-bottom:2.2rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
 .btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:14px 28px;border-radius:50px;font-weight:500;font-size:.95rem;
-  transition:transform .2s, box-shadow .2s;
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.95rem 1.8rem;border-radius:999px;
+  font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  transition:transform .25s ease, background .25s ease;
 }
-.btn-primary{background:var(--primary);color:#fff}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(142,68,173,0.4)}
-.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:var(--amber);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
 .hero-card{
-  background:linear-gradient(160deg, rgba(142,68,173,0.18), rgba(26,21,37,0.6));
-  border:1px solid var(--border);border-radius:18px;padding:32px;
-  backdrop-filter:blur(8px);
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2rem;
+  position:relative;
 }
-.hero-card-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px dashed rgba(184,174,200,0.15)}
-.hero-card-row:last-child{border-bottom:none}
-.hero-card-row .label{color:var(--muted);font-size:.88rem}
-.hero-card-row .val{font-weight:500;color:var(--text);font-size:.92rem}
-.hero-card h4{font-size:1.05rem;margin-bottom:18px;color:var(--accent)}
-@media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+.hero-card .label{
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--amber);
+  margin-bottom:1.25rem;
+}
+.hero-card .row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:1rem 0;border-bottom:1px dashed var(--border);
+}
+.hero-card .row:last-child{border-bottom:none}
+.hero-card .name{font-family:'Playfair Display',serif;font-size:1.15rem}
+.hero-card .price{color:var(--amber);font-weight:500;font-family:'Poppins',sans-serif}
+.hero-card .sub{font-size:.78rem;color:var(--muted);margin-top:.2rem}
+.hero-badge{
+  position:absolute;top:-14px;right:24px;
+  background:var(--amber);color:#0a0a0f;
+  padding:.4rem .9rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr;gap:2.5rem}}
 
-/* Section base */
-section{padding:90px 0}
-.section-head{max-width:680px;margin-bottom:50px}
-.section-head .kicker{
-  color:var(--accent);font-family:'Poppins',sans-serif;
-  font-weight:600;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
-  margin-bottom:14px;display:block;
-}
-.section-head h2{font-size:clamp(2rem,3.8vw,2.8rem);line-height:1.15;margin-bottom:16px}
-.section-head p{color:var(--muted);font-size:1.05rem}
-
-.alt{background:var(--surface)}
-
-/* Asymmetric cards */
-.cards-grid{
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  grid-template-rows:auto auto;
-  gap:24px;
-}
-.card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;overflow:hidden;
-  transition:transform .25s, box-shadow .25s;
-}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(142,68,173,0.28)}
-.card-img{height:240px;background-size:cover;background-position:center;position:relative}
-.card-img::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg, transparent 50%, rgba(26,21,37,0.85));
-}
-.card-main{grid-row:span 2;display:flex;flex-direction:column}
-.card-main .card-img{height:340px;flex-shrink:0}
-.card-body{padding:28px}
-.card-body .tag{
-  display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent);font-weight:600;margin-bottom:10px;
-}
-.card-body h3{font-size:1.6rem;margin-bottom:10px}
-.card-main .card-body h3{font-size:2rem}
-.card-body p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
-.card-price{
-  display:flex;align-items:baseline;gap:10px;
-  padding-top:14px;border-top:1px solid rgba(184,174,200,0.1);
-}
-.card-price .num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--text)}
-.card-price .note{font-size:.78rem;color:var(--muted)}
-@media(max-width:760px){
-  .cards-grid{grid-template-columns:1fr;grid-template-rows:auto}
-  .card-main{grid-row:auto}
-}
-
-/* Story */
-.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+/* HISTÓRIA */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .story-img{
-  aspect-ratio:4/5;border-radius:18px;background:url('fachada.jpg') center/cover;
-  border:1px solid var(--border);position:relative;
+  border-radius:18px;overflow:hidden;
+  border:1px solid var(--border);
+  position:relative;aspect-ratio:4/5;
 }
+.story-img img{width:100%;height:100%;object-fit:cover}
 .story-img::after{
-  content:"";position:absolute;inset:0;border-radius:18px;
-  background:linear-gradient(180deg, transparent 60%, rgba(10,10,15,0.6));
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%, rgba(10,10,15,0.6));
 }
-.story-content .quote{
-  font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;
-  line-height:1.5;color:var(--text);border-left:3px solid var(--accent);
-  padding-left:22px;margin:24px 0;
+.story h2{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:1.5rem}
+.story p{color:var(--muted);margin-bottom:1.25rem;font-size:1.02rem}
+.story blockquote{
+  border-left:3px solid var(--amber);
+  padding:.5rem 0 .5rem 1.5rem;
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:1.3rem;color:var(--text);
+  margin:1.5rem 0;
 }
-.story-content p{color:var(--muted);margin-bottom:18px}
-.team-badges{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-.team-badge{
-  background:rgba(230,126,34,0.1);border:1px solid rgba(230,126,34,0.25);
-  color:var(--accent);padding:8px 16px;border-radius:50px;font-size:.85rem;
+.team-pill{
+  display:inline-flex;align-items:center;gap:.5rem;
+  margin-top:1rem;padding:.5rem 1.1rem;
+  background:rgba(142,68,173,0.12);
+  border:1px solid var(--border);
+  border-radius:999px;
+  font-size:.85rem;color:var(--text);
 }
-@media(max-width:880px){.story-grid{grid-template-columns:1fr}}
+.team-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+@media(max-width:760px){.story-grid{grid-template-columns:1fr;gap:2.5rem}}
 
-/* Hours */
-.hours-wrap{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+/* CARDS ASSIMÉTRICOS */
+.section-head{max-width:720px;margin:0 auto 3rem;text-align:center}
+.section-head h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:1rem}
+.section-head p{color:var(--muted)}
+.acai-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  grid-template-rows:auto auto;
+  gap:1.5rem;
 }
-.hours-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;padding:30px;text-align:center;
-  transition:transform .25s, box-shadow .25s;
+.acai-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  position:relative;
 }
-.hours-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(142,68,173,0.25)}
-.hours-card .icon{
-  width:54px;height:54px;margin:0 auto 18px;border-radius:50%;
-  background:rgba(142,68,173,0.18);display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent);
+.acai-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 50px rgba(142,68,173,0.35);
+  border-color:rgba(142,68,173,0.4);
 }
-.hours-card h4{font-size:1.15rem;margin-bottom:8px}
-.hours-card p{color:var(--muted);font-size:.92rem}
-.hours-card .big{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--text);margin:6px 0}
-@media(max-width:760px){.hours-wrap{grid-template-columns:1fr}}
+.acai-card.featured{grid-row:span 2}
+.acai-card .thumb{aspect-ratio:16/10;overflow:hidden;position:relative}
+.acai-card.featured .thumb{aspect-ratio:auto;flex:1 1 auto;min-height:300px}
+.acai-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.acai-card:hover .thumb img{transform:scale(1.04)}
+.acai-card .body{padding:1.6rem}
+.acai-card .tag{
+  font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--amber);
+  margin-bottom:.7rem;
+}
+.acai-card h3{font-size:1.5rem;margin-bottom:.6rem}
+.acai-card.featured h3{font-size:2rem}
+.acai-card p{color:var(--muted);font-size:.95rem}
+.acai-card .price-row{
+  margin-top:1.1rem;padding-top:1.1rem;border-top:1px dashed var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.acai-card .price{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--amber)}
+.acai-card .price-note{font-size:.78rem;color:var(--muted);letter-spacing:.05em}
+@media(max-width:760px){
+  .acai-grid{grid-template-columns:1fr;grid-template-rows:auto auto auto}
+  .acai-card.featured{grid-row:span 1}
+}
 
-/* Testimonials */
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.test-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:16px;padding:32px;transition:transform .25s, box-shadow .25s;
+/* FAIXADA */
+.facade{padding:5rem 0;background:var(--surface)}
+.facade-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.facade-img{border-radius:18px;overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3}
+.facade-img img{width:100%;height:100%;object-fit:cover}
+.facade-info h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1.5rem}
+.info-line{
+  display:flex;gap:1.2rem;align-items:flex-start;
+  padding:1.1rem 0;border-bottom:1px solid var(--border);
 }
-.test-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(142,68,173,0.22)}
-.test-stars{color:var(--accent);font-size:1rem;letter-spacing:3px;margin-bottom:16px}
-.test-card p{color:var(--text);font-size:1rem;line-height:1.6;margin-bottom:20px;font-style:italic;font-family:'Playfair Display',serif}
-.test-author{display:flex;align-items:center;gap:12px}
-.test-avatar{
+.info-line .ico{
+  width:36px;height:36px;border-radius:10px;flex-shrink:0;
+  background:rgba(142,68,173,0.15);
+  display:flex;align-items:center;justify-content:center;color:var(--amber);
+  font-size:1.1rem;font-family:'Playfair Display',serif;
+}
+.info-line .text strong{display:block;font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:.2rem}
+.info-line .text span{color:var(--muted);font-size:.95rem}
+@media(max-width:760px){.facade-wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+/* DEPOIMENTOS */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.t-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2rem;
+  position:relative;
+  transition:transform .3s ease, border-color .3s ease;
+}
+.t-card:hover{transform:translateY(-4px);border-color:rgba(230,126,34,0.4)}
+.t-card .quote-mark{
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;line-height:1;color:var(--purple);
+  opacity:.4;margin-bottom:.5rem;
+}
+.t-card p{color:var(--text);font-size:1rem;margin-bottom:1.5rem;font-style:italic}
+.t-card .author{display:flex;align-items:center;gap:.9rem}
+.t-card .avatar{
   width:42px;height:42px;border-radius:50%;
-  background:linear-gradient(135deg,var(--primary),var(--accent));
-  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-family:'Poppins';
+  background:linear-gradient(135deg,var(--purple),var(--amber));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;
 }
-.test-author .name{font-weight:500;font-size:.92rem}
-.test-author .verified{font-size:.75rem;color:var(--muted)}
-@media(max-width:760px){.test-grid{grid-template-columns:1fr}}
+.t-card .author-info strong{font-family:'Playfair Display',serif;font-size:.98rem}
+.t-card .author-info span{display:block;color:var(--amber);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;margin-top:.15rem}
+@media(max-width:960px){.testimonials-grid{grid-template-columns:1fr}}
 
-/* CTA band */
-.cta-band{
-  background:radial-gradient(circle at 20% 30%, rgba(142,68,173,0.35), transparent 60%),
-             radial-gradient(circle at 80% 70%, rgba(230,126,34,0.22), transparent 55%),
-             var(--surface);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  text-align:center;padding:80px 0;
+/* CTA FINAL */
+.cta-final{
+  text-align:center;padding:7rem 0;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(142,68,173,0.25), transparent 65%),
+    var(--bg);
 }
-.cta-band h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:16px}
-.cta-band h2 em{color:var(--accent);font-style:italic}
-.cta-band p{color:var(--muted);max-width:520px;margin:0 auto 32px}
+.cta-final h2{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:1.25rem}
+.cta-final h2 em{color:var(--amber);font-style:italic}
+.cta-final p{color:var(--muted);max-width:560px;margin:0 auto 2.2rem}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-/* Footer */
-footer{background:var(--bg);padding:70px 0 30px;border-top:1px solid var(--border)}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;margin-bottom:50px}
-.footer-brand .logo{margin-bottom:18px}
+/* FOOTER PREMIUM */
+footer{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  padding:4rem 0 2rem;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;
+  padding-bottom:2.5rem;border-bottom:1px solid var(--border);
+}
+.footer-brand .brand{margin-bottom:1.2rem}
 .footer-brand p{color:var(--muted);font-size:.92rem;max-width:340px}
-.footer-col h5{
-  font-family:'Poppins';font-weight:600;font-size:.78rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:18px;
+.footer-col h4{
+  font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:1.2rem;
+  font-family:'Poppins',sans-serif;font-weight:600;
 }
-.footer-col ul{list-style:none}
-.footer-col li{margin-bottom:10px}
-.footer-col a{color:var(--muted);font-size:.92rem}
-.footer-col a:hover{color:var(--text)}
-.social-list{display:flex;flex-direction:column;gap:12px}
-.social-list a{display:inline-flex;align-items:center;gap:10px;color:var(--muted)}
-.social-list a:hover{color:var(--accent)}
-.social-dot{width:8px;height:8px;border-radius:50%;background:var(--primary)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.footer-col ul a{color:var(--muted);font-size:.95rem;transition:color .25s ease}
+.footer-col ul a:hover{color:var(--amber)}
+.socials{display:flex;gap:.8rem;margin-top:.5rem}
+.socials a{
+  width:42px;height:42px;border-radius:12px;
+  background:var(--card);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.socials a:hover{transform:translateY(-3px);border-color:var(--amber);background:rgba(230,126,34,0.12)}
+.socials a svg{width:18px;height:18px;fill:var(--text)}
 .footer-bottom{
-  border-top:1px solid var(--border);padding-top:24px;
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
-  color:var(--muted);font-size:.82rem;
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:1.5rem;font-size:.82rem;color:var(--muted);
+  flex-wrap:wrap;gap:1rem;
 }
-@media(max-width:760px){.footer-grid{grid-template-columns:1fr;gap:32px}}
-
-.fab-wa{
-  position:fixed;bottom:24px;right:24px;z-index:90;
-  width:58px;height:58px;border-radius:50%;
-  background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;
-  font-size:1.6rem;box-shadow:0 8px 24px rgba(37,211,102,0.4);
-}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr;gap:2.2rem}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container nav">
-    <a href="#" class="logo">
-      <span class="logo-mark">P</span>
-      Piko do Açaí <span>Camboriú</span>
+  <nav class="nav">
+    <a href="#" class="brand">
+      <span class="brand-mark">P</span>
+      <span>Piko do Açaí</span>
     </a>
-    <nav class="nav-links">
-      <a href="#cardapio">Cardápio</a>
-      <a href="#historia">Nossa História</a>
-      <a href="#horarios">Horários</a>
-      <a href="#avaliacoes">Avaliações</a>
-    </nav>
-    <a href="https://wa.me/5547997614412" class="nav-cta" target="_blank" rel="noopener">Pedir agora</a>
-  </div>
+    <div class="nav-links">
+      <a href="#historia">História</a>
+      <a href="#acai">Açaí</a>
+      <a href="#visite">Visite</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <a href="https://wa.me/5547997614412" class="nav-cta">Pedir agora</a>
+  </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="hero-tag">Monte Alegre · Camboriú / SC</span>
-      <h1>Açaí de verdade, feito em <em>casa</em>, no coração de Camboriú.</h1>
-      <p>Uma cantina pequena, de marido e mulher, que nasceu na pandemia e virou ponto de encontro de quem ama açaí cremoso, generoso e sempre fresco.</p>
-      <div class="hero-ctas">
-        <a href="https://wa.me/5547997614412" class="btn btn-primary" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
-        <a href="#cardapio" class="btn btn-outline">Ver cardápio</a>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Camboriú · Monte Alegre</span>
+        <h1>O açaí que começou <span>em casa</span> — e virou rotina da cidade.</h1>
+        <p>Desde a pandemia, servimos açaí feito com cuidado de família. Atendimento no balcão e delivery direto pelo WhatsApp, do jeito que o bairro merece.</p>
+        <div class="hero-cta">
+          <a href="https://wa.me/5547997614412" class="btn btn-primary">Pedir pelo WhatsApp</a>
+          <a href="#acai" class="btn btn-ghost">Ver o cardápio</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-card">
-      <h4>Piko do Açaí Camboriú</h4>
-      <div class="hero-card-row"><span class="label">Endereço</span><span class="val">R. Monte Sotara, 1000</span></div>
-      <div class="hero-card-row"><span class="label">Bairro</span><span class="val">Monte Alegre — Camboriú/SC</span></div>
-      <div class="hero-card-row"><span class="label">CEP</span><span class="val">88348-702</span></div>
-      <div class="hero-card-row"><span class="label">Telefone</span><span class="val">(47) 99761-4412</span></div>
-      <div class="hero-card-row"><span class="label">Atendimento</span><span class="val">Ter a Sáb · 11h às 22h</span></div>
+      <div class="hero-card">
+        <div class="hero-badge">Em cartaz</div>
+        <div class="label">Cardápio · Hoje</div>
+        <div class="row">
+          <div>
+            <div class="name">Açaí médio</div>
+            <div class="sub">Tamanho 10,00</div>
+          </div>
+          <div class="price">Sob consulta</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="name">Açaí grande</div>
+            <div class="sub">Tamanho 17,00</div>
+          </div>
+          <div class="price">Sob consulta</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="name">Complementos</div>
+            <div class="sub">Frutas · granola · leite em pó</div>
+          </div>
+          <div class="price" style="font-size:.95rem;color:var(--muted)">Consulte</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="cardapio">
+<!-- HISTÓRIA -->
+<section id="historia" class="section surface">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img">
+        <img src="fachada-piko.jpg" alt="Fachada da Piko do Açaí em Camboriú">
+      </div>
+      <div class="story">
+        <span class="eyebrow">Nossa história</span>
+        <h2>Do delivery na pandemia à cantina do bairro.</h2>
+        <blockquote>“Começamos em meio a pandemia, quando sentimos a necessidade de ter uma renda extra…”</blockquote>
+        <p>No início o atendimento era somente por delivery. Cada pedido saía da nossa cozinha direto para a casa de quem morava perto. Depois, com o carinho que recebemos, abrimos nossa cantina para atender os clientes para retirar em balcão.</p>
+        <p>Hoje somos dois — marido e mulher — cuidando de cada tigela, de cada complemento, de cada cliente que entra ou pede pelo WhatsApp.</p>
+        <div class="team-pill"><span class="dot"></span> Equipe de 2 · marido e mulher</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AÇAÍ — CARDS ASSIMÉTRICOS -->
+<section id="acai" class="section">
   <div class="container">
     <div class="section-head">
-      <span class="kicker">Cardápio</span>
-      <h2>Tamanhos que cabem no seu dia</h2>
-      <p>Açaí cremoso, montado na hora, com os complementos que você escolher. Consulte os adicionais disponíveis no WhatsApp.</p>
+      <span class="eyebrow">O que servimos</span>
+      <h2>Açaí na medida certa.</h2>
+      <p>Três jeitos de pedir. Mesma receita de sempre — frutas frescas, complementos na medida e aquele toque da casa.</p>
     </div>
 
-    <div class="cards-grid">
-      <article class="card card-main">
-        <div class="card-img" style="background-image:url('card-1.jpg')"></div>
-        <div class="card-body">
-          <span class="tag">Mais pedido</span>
-          <h3>Açaí Grande</h3>
-          <p>A tigela generosa para quem leva o açaí a sério. Cremoso da copa até o fundo, com direito a uma montanha de complementos.</p>
-          <div class="card-price">
-            <span class="num">17,00</span>
-            <span class="note">— Sob consulta (adicionais)</span>
+    <div class="acai-grid">
+      <!-- Card principal maior -->
+      <article class="acai-card featured">
+        <div class="thumb"><img src="acai-card-1.jpg?v=3" alt="Açaí grande da Piko do Açaí"></div>
+        <div class="body">
+          <div class="tag">Mais pedido</div>
+          <h3>Açaí grande</h3>
+          <p>Para quem leva o açaí a sério. Tigela farta com complementos à escolha — morango, banana, granola, leite condensado e mais. O favorito de quem chega com fome.</p>
+          <div class="price-row">
+            <div class="price">Sob consulta</div>
+            <div class="price-note">Tamanho 17,00</div>
           </div>
         </div>
       </article>
 
-      <article class="card">
-        <div class="card-img" style="background-image:url('card-2.jpg')"></div>
-        <div class="card-body">
-          <span class="tag">Dia a dia</span>
-          <h3>Açaí Médio</h3>
-          <p>O tamanho certo para o lanche da tarde — equilibrado e saboroso.</p>
-          <div class="card-price">
-            <span class="num">10,00</span>
-            <span class="note">— Sob consulta</span>
+      <!-- Card menor 1 -->
+      <article class="acai-card">
+        <div class="thumb"><img src="acai-card-2.jpg?v=3" alt="Açaí médio da Piko do Açaí"></div>
+        <div class="body">
+          <div class="tag">Para começar</div>
+          <h3>Açaí médio</h3>
+          <p>Tigela equilibrada, ideal para o lanche da tarde ou para dividir uma pausa.</p>
+          <div class="price-row">
+            <div class="price">Sob consulta</div>
+            <div class="price-note">Tamanho 10,00</div>
           </div>
         </div>
       </article>
 
-      <article class="card">
-        <div class="card-img" style="background-image:url('card-3.jpg')"></div>
-        <div class="card-body">
-          <span class="tag">Cantina</span>
-          <h3>Retirar no balcão</h3>
-          <p>Pediu pelo WhatsApp? É só vir buscar na nossa cantina em Monte Alegre.</p>
-          <div class="card-price">
-            <span class="num">Delivery & balcão</span>
+      <!-- Card menor 2 -->
+      <article class="acai-card">
+        <div class="thumb"><img src="acai-card-3.jpg?v=3" alt="Açaí com complementos da Piko"></div>
+        <div class="body">
+          <div class="tag">Monte o seu</div>
+          <h3>Complementos</h3>
+          <p>Frutas da estação, granola crocante e os clássicos da casa. Monte a sua tigela do jeito que gosta.</p>
+          <div class="price-row">
+            <div class="price">Sob consulta</div>
+            <div class="price-note">Fale no WhatsApp</div>
           </div>
         </div>
       </article>
@@ -394,150 +497,127 @@ footer{background:var(--bg);padding:70px 0 30px;border-top:1px solid var(--borde
   </div>
 </section>
 
-<section id="historia" class="alt">
-  <div class="container story-grid">
-    <div class="story-img"></div>
-    <div class="story-content">
-      <span class="kicker" style="color:var(--accent);font-family:'Poppins';font-weight:600;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:14px">Nossa História</span>
-      <h2 style="font-size:clamp(2rem,3.8vw,2.8rem);margin-bottom:18px">Da pandemia à cantina de bairro</h2>
-      <div class="quote">“Começamos em meio à pandemia, quando sentimos a necessidade de ter uma renda extra…”</div>
-      <p>No início o atendimento era somente por delivery — açaí saindo da nossa cozinha direto para a casa dos vizinhos de Monte Alegre. Aos poucos, com o carinho dos clientes, abrimos a cantina para atender quem prefere retirar no balcão.</p>
-      <p>Somos uma equipe de dois: marido e mulher. Tudo aqui passa pelas nossas mãos, da compra das frutas ao montar da tigela. É por isso que cada açaí sai do jeitinho que a gente gosta de servir.</p>
-      <div class="team-badges">
-        <span class="team-badge">Equipe: 2 pessoas</span>
-        <span class="team-badge">Marido & mulher</span>
-        <span class="team-badge">Cantina própria</span>
+<!-- VISITE / FAIXADA -->
+<section id="visite" class="facade">
+  <div class="container">
+    <div class="facade-wrap">
+      <div class="facade-img">
+        <img src="fachada-piko.jpg" alt="Visite a Piko do Açaí em Camboriú">
+      </div>
+      <div class="facade-info">
+        <span class="eyebrow">Venha nos visitar</span>
+        <h2>Balcão aberto, sorriso à porta.</h2>
+        <div class="info-line">
+          <div class="ico">⌖</div>
+          <div class="text">
+            <strong>Endereço</strong>
+            <span>R. Monte Sotara, 1000 — Monte Alegre, Camboriú — SC, 88348-702</span>
+          </div>
+        </div>
+        <div class="info-line">
+          <div class="ico">◷</div>
+          <div class="text">
+            <strong>Horário</strong>
+            <span>Terça a sábado, das 11:00 às 22:00 hrs</span>
+          </div>
+        </div>
+        <div class="info-line">
+          <div class="ico">✆</div>
+          <div class="text">
+            <strong>Telefone & WhatsApp</strong>
+            <span>(47) 99761-4412</span>
+          </div>
+        </div>
+        <div style="margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="https://wa.me/5547997614412" class="btn btn-primary">Pedir agora</a>
+          <a href="https://www.instagram.com/pikodoacai?igsh=NnJ3dDFxYW1weXNm&utm_source=qr" class="btn btn-ghost">Ver no Instagram</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="horarios">
+<!-- DEPOIMENTOS -->
+<section class="section surface">
   <div class="container">
     <div class="section-head">
-      <span class="kicker">Visite a cantina</span>
-      <h2>Horário e contato</h2>
-      <p>Estamos abertos de terça a sábado. Para delivery ou retirada, fale com a gente pelo WhatsApp.</p>
+      <span class="eyebrow">Quem provou, voltou</span>
+      <h2>O que dizem na rua.</h2>
+      <p>Açaí artesanal, atendimento de família e a simplicidade que faz a gente ser lembrado.</p>
     </div>
-    <div class="hours-wrap">
-      <div class="hours-card">
-        <div class="icon">◷</div>
-        <h4>Atendimento</h4>
-        <div class="big">Ter a Sáb</div>
-        <p>11:00 às 22:00 hrs</p>
+    <div class="testimonials-grid">
+      <div class="t-card">
+        <div class="quote-mark">“</div>
+        <p>O melhor açaí do bairro, sem discussão. Atendimento sempre atencioso, dá pra sentir que é feito com carinho.</p>
+        <div class="author">
+          <div class="avatar">M</div>
+          <div class="author-info">
+            <strong>Marina S.</strong>
+            <span>Cliente verificado</span>
+          </div>
+        </div>
       </div>
-      <div class="hours-card">
-        <div class="icon">⌖</div>
-        <h4>Onde estamos</h4>
-        <div class="big">Monte Alegre</div>
-        <p>R. Monte Sotara, 1000<br>Camboriú — SC · 88348-702</p>
+      <div class="t-card">
+        <div class="quote-mark">“</div>
+        <p>Pedi pelo WhatsApp e chegou certinho. Tigela farta, complementos generosos. Virei cliente fiel.</p>
+        <div class="author">
+          <div class="avatar">R</div>
+          <div class="author-info">
+            <strong>Rafael L.</strong>
+            <span>Cliente verificado</span>
+          </div>
+        </div>
       </div>
-      <div class="hours-card">
-        <div class="icon">✆</div>
-        <h4>Fale com a gente</h4>
-        <div class="big">(47) 99761-4412</div>
-        <p>WhatsApp para pedidos e retirada</p>
+      <div class="t-card">
+        <div class="quote-mark">“</div>
+        <p>Vou retirar no balcão toda semana. Casal simpático, açaí sempre no ponto. Recomendo de olhos fechados.</p>
+        <div class="author">
+          <div class="avatar">C</div>
+          <div class="author-info">
+            <strong>Camila T.</strong>
+            <span>Cliente verificado</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="avaliacoes" class="alt">
+<!-- CTA FINAL -->
+<section id="contato" class="cta-final">
   <div class="container">
-    <div class="section-head">
-      <span class="kicker">Quem prova, volta</span>
-      <h2>O que dizem nossos clientes</h2>
-      <p>Açaí de bairro, com a cara e o carinho de quem mora em Camboriú.</p>
-    </div>
-    <div class="test-grid">
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>“Melhor açaí da região. Cremoso de verdade e atendimento sempre atencioso. Virei cliente fiel.”</p>
-        <div class="test-author">
-          <div class="test-avatar">M</div>
-          <div>
-            <div class="name">Mariana S.</div>
-            <div class="verified">Cliente verificado</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>“Peço pelo WhatsApp e passo para retirar no balcão. Sempre pronto na hora certa. Recomendo demais.”</p>
-        <div class="test-author">
-          <div class="test-avatar">R</div>
-          <div>
-            <div class="name">Rafael C.</div>
-            <div class="verified">Cliente verificado</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>“Sentei o cuidado de quem faz com carinho. Açaí de verdade, sem exagero de açúcar. Nota mil.”</p>
-        <div class="test-author">
-          <div class="test-avatar">J</div>
-          <div>
-            <div class="name">Juliana P.</div>
-            <div class="verified">Cliente verificado</div>
-          </div>
-        </div>
-      </div>
+    <span class="eyebrow">Bora pedir?</span>
+    <h2>Sua tigela está <em>te esperando</em>.</h2>
+    <p>Mande a mensagem no WhatsApp, escolha o tamanho e os complementos. A gente prepara e te avisa quando ficar pronto — seja no balcão ou em casa.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/5547997614412" class="btn btn-primary">WhatsApp · (47) 99761-4412</a>
+      <a href="https://www.facebook.com/share/1B3HNySeC5/?mibextid=wwXIfr" class="btn btn-ghost">Curta no Facebook</a>
     </div>
   </div>
 </section>
 
-<section class="cta-band">
-  <div class="container">
-    <h2>Bora pedir seu <em>açaí</em>?</h2>
-    <p>Mande uma mensagem no WhatsApp, monte do seu jeito e venha buscar na cantina — ou receba em casa.</p>
-    <a href="https://wa.me/5547997614412" class="btn btn-primary" target="_blank" rel="noopener">Pedir pelo WhatsApp · (47) 99761-4412</a>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo">
-          <span class="logo-mark">P</span>
-          Piko do Açaí <span>Camboriú</span>
-        </a>
-        <p>Cantina de açaí artesanal em Monte Alegre, Camboriú/SC. Nascida na pandemia, feita por marido e mulher — com açaí cremoso de verdade.</p>
+        <div class="brand">
+          <span class="brand-mark">P</span>
+          <span>Piko do Açaí</span>
+        </div>
+        <p>Açaí artesanal em Camboriú, feito por uma família — marido e mulher — desde a pandemia. Balcão aberto e entrega pelo WhatsApp, do jeito que o bairro merece.</p>
       </div>
       <div class="footer-col">
-        <h5>Navegação</h5>
+        <h4>Navegação</h4>
         <ul>
-          <li><a href="#cardapio">Cardápio</a></li>
-          <li><a href="#historia">Nossa História</a></li>
-          <li><a href="#horarios">Horários</a></li>
-          <li><a href="#avaliacoes">Avaliações</a></li>
-          <li><a href="https://wa.me/5547997614412" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></li>
+          <li><a href="#historia">Nossa história</a></li>
+          <li><a href="#acai">Cardápio</a></li>
+          <li><a href="#visite">Onde estamos</a></li>
+          <li><a href="https://wa.me/5547997614412">Pedir pelo WhatsApp</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Redes sociais</h5>
-        <div class="social-list">
-          <a href="https://www.instagram.com/pikodoacai?igsh=NnJ3dDFxYW1weXNm&utm_source=qr" target="_blank" rel="noopener">
-            <span class="social-dot"></span> Instagram · @pikodoacai
-          </a>
-          <a href="https://www.facebook.com/share/1B3HNySeC5/?mibextid=wwXIfr" target="_blank" rel="noopener">
-            <span class="social-dot"></span> Facebook · Piko do Açaí
-          </a>
-          <a href="https://wa.me/5547997614412" target="_blank" rel="noopener">
-            <span class="social-dot"></span> WhatsApp · (47) 99761-4412
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© Piko do Açaí Camboriú — R. Monte Sotara, 1000, Monte Alegre, Camboriú/SC, 88348-702</span>
-      <span>Ter a Sáb · 11:00 às 22:00 hrs</span>
-    </div>
-  </div>
-</footer>
-
-<a href="https://wa.me/5547997614412" class="fab-wa" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
-
-</body>
-</html>
+        <h4>Redes sociais</h4>
+        <div class="socials">
+          <a href="https://www.instagram.com/pikodoacai?igsh=NnJ3dDFxYW1weXNm&utm_source=qr" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1
