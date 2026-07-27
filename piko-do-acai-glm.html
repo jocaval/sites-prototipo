@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piko do Açaí Camboriú — O verdadeiro açaí na tigela</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#0a0a0f;
+    --bg-2:#13131c;
+    --roxo:#8E44AD;
+    --roxo-esc:#6c3483;
+    --amber:#E67E22;
+    --amber-claro:#f5b041;
+    --cream:#f4e9d8;
+    --branco:#fafafa;
+    --cinza:#9a9aa8;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--branco);
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;line-height:1.1}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 6%;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(10,10,15,.6);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(142,68,173,.15);
+    transition:.3s;
+  }
+  .nav-logo{display:flex;align-items:center;gap:12px}
+  .nav-logo img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--roxo)}
+  .nav-logo span{font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;letter-spacing:.5px}
+  .nav-logo span b{color:var(--amber)}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:.92rem;color:var(--cinza);font-weight:400;transition:.25s;position:relative}
+  .nav-links a:hover{color:var(--amber)}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--amber);transition:.3s}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    background:linear-gradient(135deg,var(--roxo),var(--roxo-esc));
+    color:#fff!important;padding:10px 22px;border-radius:50px;
+    font-weight:500;border:1px solid rgba(230,126,34,.3);
+  }
+  .nav-cta:hover{background:linear-gradient(135deg,var(--roxo-esc),var(--amber))!important}
+  .menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    position:relative;
+    padding:140px 6% 80px;
+    display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;
+    background:
+      radial-gradient(circle at 20% 30%,rgba(142,68,173,.25),transparent 50%),
+      radial-gradient(circle at 80% 70%,rgba(230,126,34,.18),transparent 50%),
+      #000;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(142,68,173,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(142,68,173,.05) 1px,transparent 1px);
+    background-size:60px 60px;
+    pointer-events:none;
+  }
+  .hero-text{position:relative;z-index:2}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 16px;border:1px solid rgba(230,126,34,.4);
+    border-radius:50px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;
+    color:var(--amber-claro);margin-bottom:24px;
+  }
+  .hero-tag .dot{width:7px;height:7px;background:var(--amber);border-radius:50%;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .hero h1{
+    font-size:clamp(3rem,7vw,5.8rem);
+    font-weight:900;
+    margin-bottom:24px;
+    letter-spacing:-1px;
+  }
+  .hero h1 .accent{color:var(--amber);font-style:italic;font-weight:500}
+  .hero h1 .roxo-t{color:var(--roxo)}
+  .hero p.lead{
+    font-size:1.1rem;color:var(--cinza);max-width:520px;margin-bottom:36px;font-weight:300;
+  }
+  .hero-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--amber),#cf6e1b);
+    color:#0a0a0f;padding:15px 32px;border-radius:50px;
+    font-weight:600;font-size:.95rem;display:inline-flex;align-items:center;gap:10px;
+    transition:.3s;box-shadow:0 10px 30px rgba(230,126,34,.3);
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(230,126,34,.45)}
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,.2);color:#fff;
+    padding:15px 32px;border-radius:50px;font-weight:500;font-size:.95rem;
+    transition:.3s;
+  }
+  .btn-ghost:hover{border-color:var(--roxo);color:var(--roxo)}
+
+  /* HERO cards assimétricos */
+  .hero-cards{position:relative;height:480px}
+  .hcard{
+    position:absolute;border-radius:18px;overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+    transition:.4s;
+  }
+  .hcard img{width:100%;height:100%;object-fit:cover}
+  .hcard-1{
+    top:0;left:0;width:62%;height:60%;
+    border:2px solid rgba(142,68,173,.4);
+    transform:rotate(-4deg);
+  }
+  .hcard-2{
+    bottom:0;right:0;width:55%;height:55%;
+    border:2px solid rgba(230,126,34,.4);
+    transform:rotate(5deg);z-index:2;
+  }
+  .hcard-3{
+    top:42%;left:8%;width:38%;height:30%;
+    background:linear-gradient(135deg,var(--roxo),var(--roxo-esc));
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:14px;text-align:center;z-index:3;transform:rotate(-2deg);
+    border:2px solid rgba(230,126,34,.5);
+  }
+  .hcard-3 .big{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:#fff;line-height:1}
+  .hcard-3 .small{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--amber-claro);margin-top:6px}
+  .hcard:hover{transform:rotate(0) scale(1.03);z-index:5}
+
+  /* SECTION base */
+  section{padding:100px 6%;position:relative}
+  .section-head{text-align:center;margin-bottom:60px}
+  .section-label{
+    display:inline-block;font-size:.8rem;letter-spacing:4px;text-transform:uppercase;
+    color:var(--amber);margin-bottom:14px;font-weight:500;
+  }
+  .section-head h2{
+    font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;letter-spacing:-1px;
+  }
+  .section-head h2 em{color:var(--roxo);font-weight:500}
+  .section-head p{color:var(--cinza);max-width:580px;margin:18px auto 0;font-weight:300}
+
+  /* SOBRE */
+  .sobre{
+    background:linear-gradient(180deg,#0a0a0f,#0f0f18);
+    display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;
+  }
+  .sobre-img-wrap{position:relative}
+  .sobre-img-wrap img{
+    width:100%;border-radius:18px;
+    box-shadow:0 30px 70px rgba(0,0,0,.6);
+    border:1px solid rgba(142,68,173,.2);
+  }
+  .sobre-img-wrap::before{
+    content:'';position:absolute;top:-20px;left:-20px;
+    width:120px;height:120px;border:2px solid var(--amber);
+    border-radius:18px;z-index:-1;
+  }
+  .sobre-badge{
+    position:absolute;bottom:24px;right:-20px;
+    background:var(--amber);color:#0a0a0f;
+    padding:18px 22px;border-radius:14px;
+    box-shadow:0 15px 40px rgba(230,126,34,.4);
+  }
+  .sobre-badge .num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;line-height:1}
+  .sobre-badge .lbl{font-size:.75rem;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+  .sobre-content h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:24px}
+  .sobre-content h2 em{color:var(--amber);font-style:italic;font-weight:500}
+  .sobre-content p{color:var(--cinza);margin-bottom:18px;font-weight:300}
+  .sobre-stats{display:flex;gap:30px;margin-top:36px;flex-wrap:wrap}
+  .stat{flex:1;min-width:120px}
+  .stat .n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--roxo)}
+  .stat .l{font-size:.85rem;color:var(--cinza);text-transform:uppercase;letter-spacing:1px}
+
+  /* CARDÁPIO */
+  .cardapio{background:var(--bg)}
+  .cardapio-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1280px;margin:0 auto;
+  }
+  .menu-card{
+    background:var(--bg-2);
+    border-radius:20px;overflow:hidden;
+    border:1px solid rgba(142,68,173,.15);
+    transition:.4s;position:relative;
+    display:flex;flex-direction:column;
+  }
+  .menu-card:nth-child(2){transform:translateY(30px)}
+  .menu-card:hover{transform:translateY(-10px);border-color:var(--amber)}
+  .menu-card:nth-child(2):hover{transform:translateY(20px)}
+  .menu-card-img{height:240px;overflow:hidden;position:relative}
+  .menu-card-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .menu-card:hover .menu-card-img img{transform:scale(1.08)}
+  .menu-card-img::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 40%,rgba(10,10,15,.9));
+  }
+  .menu-card-tag{
+    position:absolute;top:14px;left:14px;z-index:2;
+    background:rgba(10,10,15,.8);backdrop-filter:blur(8px);
+    padding:6px 12px;border-radius:50px;
+    font-size:.72rem;letter-spacing:1px;text-transform:uppercase;
+    border:1px solid rgba(230,126,34,.4);color:var(--amber-claro);
+  }
+  .menu-card-body{padding:28px;flex:1;display:flex;flex-direction:column}
+  .menu-card-body h3{font-size:1.6rem;margin-bottom:10px}
+  .menu-card-body p{color:var(--cinza);font-size:.92rem;margin-bottom:18px;flex:1;font-weight:300}
+  .menu-card-foot{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)}
+  .menu-price{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--amber)}
+  .menu-price span{font-size:.85rem;color:var(--cinza);font-weight:400}
+  .menu-cta{
+    background:var(--roxo);color:#fff;padding:9px 18px;border-radius:50px;
+    font-size:.85rem;font-weight:500;transition:.3s;
+  }
+  .menu-cta:hover{background:var(--amber);color:#0a0a0f}
+
+  /* DEPOIMENTOS */
+  .depo{
+    background:linear-gradient(180deg,#0a0a0f,#0f0a14);
+    overflow:hidden;
+  }
+  .depo-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1280px;margin:0 auto;
+  }
+  .dep-card{
+    background:var(--bg-2);padding:36px 30px;border-radius:18px;
+    border:1px solid rgba(142,68,173,.15);position:relative;
+    transition:.3s;
+  }
+  .dep-card:hover{border-color:var(--roxo);transform:translateY(-5px)}
+  .dep-quote{
+    font-family:'Playfair Display',serif;font-size:4rem;color:var(--roxo);
+    line-height:0;opacity:.4;position:absolute;top:30px;right:24px;
+  }
+  .dep-stars{color:var(--amber);margin-bottom:16px;font-size:.95rem;letter-spacing:2px}
+  .dep-text{color:#d8d8df;font-size:.95rem;margin-bottom:24px;font-weight:300;font-style:italic}
+  .dep-author{display:flex;align-items:center;gap:14px}
+  .dep-avatar{
+    width:46px;height:46px;border-radius:50%;
+    background:linear-gradient(135deg,var(--roxo),var(--amber));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-weight:700;color:#fff;
+  }
+  .dep-author-info strong{display:block;font-size:.95rem}
+  .dep-author-info span{font-size:.78rem;color:var(--cinza)}
+
+  /* CONTATO */
+  .contato{
+    background:var(--bg);
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  }
+  .contato-info h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:24px}
+  .contato-info h2 em{color:var(--amber);font-style:italic;font-weight:500}
+  .contato-info>p{color:var(--cinza);margin-bottom:36px;font-weight:300}
+  .contato-list{list-style:none;margin-bottom:36px}
+  .contato-list li{
+    display:flex;gap:16px;padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .contato-list .icon{
+    width:42px;height:42px;border-radius:12px;
+    background:rgba(142,68,173,.15);color:var(--roxo);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    font-size:1.1rem;
+  }
+  .contato-list .info small{display:block;font-size:.75rem;color:var(--cinza);text-transform:uppercase;letter-spacing:1px}
+  .contato-list .info strong{font-size:1rem;font-weight:500}
+  .contato-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .contato-map{
+    height:480px;border-radius:20px;overflow:hidden;
+    border:1px solid rgba(142,68,173,.25);
+    box-shadow:0 30px 70px rgba(0,0,0,.5);
+  }
+  .contato-map iframe{width:100%;height:100%;filter:invert(0.92) hue-rotate(180deg) grayscale(0.2)}
+
+  /* FOOTER */
+  footer{
+    background:#06060a;
+    padding:70px 6% 30px;
+    border-top:1px solid rgba(142,68,173,.2);
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;margin-bottom:50px;
+  }
+  .footer-col h4{
+    font-family:'Poppins',sans-serif;font-size:.85rem;letter-spacing:2px;
+    text-transform:uppercase;color:var(--amber);margin-bottom:20px;font-weight:600;
+  }
+  .footer-logo{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .footer-logo img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--roxo)}
+  .footer-logo .name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700}
+  .footer-logo .name b{color:var(--amber)}
+  .footer-col p{color:var(--cinza);font-size:.9rem;font-weight:300;line-height:1.7}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{margin-bottom:12px}
+  .footer-col ul a{color:var(--cinza);font-size:.9rem;transition:.25s}
+  .footer-col ul a:hover{color:var(--amber);padding-left:4px}
+  .footer-social{display:flex;gap:12px;margin-top:18px}
+  .footer-social a{
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(142,68,173,.15);color:var(--roxo);
+    display:flex;align-items:center;justify-content:center;
+    transition:.3s;font-size:.95rem;
+  }
+  .footer-social a:hover{background:var(--amber);color:#0a0a0f;transform:translateY(-3px)}
+  .footer-bottom{
+    padding-top:24px;border-top:1px solid rgba(255,255,255,.06);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+  }
+  .footer-bottom p{color:var(--cinza);font-size:.82rem}
+  .footer-bottom .made{color:var(--roxo);font-size:.82rem}
+
+  /* RESPONSIVO */
+  @media(max-width:900px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#0a0a0f;flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid rgba(142,68,173,.2)}
+    .nav-links.open{display:flex}
+    .menu-toggle{display:block}
+    .hero{grid-template-columns:1fr;padding-top:120px;gap:60px}
+    .hero-cards{height:380px}
+    .sobre{grid-template-columns:1fr;gap:60px}
+    .sobre-img-wrap::before{display:none}
+    .cardapio-grid{grid-template-columns:1fr;max-width:480px}
+    .menu-card:nth-child(2){transform:none}
+    .menu-card:nth-child(2):hover{transform:translateY(-10px)}
+    .depo-grid{grid-template-columns:1fr;max-width:480px}
+    .contato{grid-template-columns:1fr;gap:40px}
+    .contato-map{height:340px}
+    .footer-grid{grid-template-columns:1fr;gap:36px}
+  }
+  @media(max-width:560px){
+    section{padding:70px 5%}
+    .hero{padding:110px 5% 60px}
+    .hero-cards{height:300px}
+    .hcard-3 .big{font-size:1.3rem}
+    .sobre-stats{gap:18px}
+    .stat{min-width:90px}
+    .stat .n{font-size:1.5rem}
+    .contato-actions{flex-direction:column}
+    .contato-actions a{width:100%;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="logo-piko.png" alt="Piko do Açaí">
+    <span>Piko do <b>Açaí</b></span>
+  </a>
+  <button class="menu-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+  <div class="nav-links" id="navlinks">
+    <a href="#sobre">Sobre</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#depoimentos">Avaliações</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5547997614412" target="_blank" class="nav-cta">Pedir Agora</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <span class="hero-tag"><span class="dot"></span> Camboriú · Santa Catarina</span>
+    <h1>O açaí que <span class="accent">virou</span> tradição no <span class="roxo-t">Balneário</span>.</h1>
+    <p class="lead">Uma história que começou na pandemia, com uma família, um sonho e muito açaí cremoso. Hoje, servimos a melhor tigela da Rua Monte Sotara — feita no capricho, do jeito que você merece.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5547997614412?text=Olá!%20Quero%20pedir%20um%20açai." target="_blank" class="btn-primary">
+        🛒 Pedir pelo WhatsApp
+      </a>
+      <a href="#cardapio" class="btn-ghost">Ver Cardápio</a>
+    </div>
+  </div>
+  <div class="hero-cards">
+    <div class="hcard hcard-1">
+      <img src="acai-card-1.jpg" alt="Açaí cremoso Piko">
+    </div>
+    <div class="hcard hcard-2">
+      <img src="acai-card-2.jpg" alt="Tigela de açaí com acompanhamentos">
+    </div>
+    <div class="hcard hcard-3">
+      <div class="big">100%</div>
+      <div class="small">Cremoso · Natural</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-img-wrap">
+    <img src="fachada-piko.jpg" alt="Fachada Piko do Açaí Camboriú">
+    <div class="sobre-badge">
+      <div class="num">2</div>
+      <div class="lbl">Na família</div>
+    </div>
+  </div>
+  <div class="sobre-content">
+    <span class="section-label">Nossa História</span>
+    <h2>Do desafio à <em>paixão</em> por açaí.</h2>
+    <p>Tudo começou em meio à pandemia, quando sentimos a necessidade de ter uma renda extra. Marido e mulher, lado a lado, transformamos uma ideia simples em um ponto de referência para quem ama açaí de verdade em Camboriú.</p>
+    <p>Somos uma equipe pequena, de apenas <strong style="color:var(--amber)">duas pessoas</strong> — mas com um cuidado gigante por cada tigela que sai daqui. Cada detalhe, do creme aos acompanhamentos, é pensado para entregar a melhor experiência possível.</p>
+    <p>Hoje atendemos na <strong style="color:#fff">R. Monte Sotara, 1000</strong>, e cada cliente que volta é a prova de que fizemos a escolha certa.</p>
+    <div class="sobre-stats">
+      <div class="stat">
+        <div class="n">2020</div>
+        <div class="l">Início</div>
+      </div>
+      <div class="stat">
+        <div class="n">2</div>
+        <div class="l">Equipe</div>
+      </div>
+      <div class="stat">
+        <div class="n">+5 mil</div>
+        <div class="l">Tigelas servidas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDÁPIO -->
+<section class="cardapio" id="cardapio">
+  <div class="section-head">
+    <span class="section-label">Nosso Cardápio</span>
+    <h2>Tigelas que <em>conquistam</em></h2>
+    <p>Selecionamos os melhores acompanhamentos para acompanhar o açaí mais cremoso de Camboriú. Escolha o seu tamanho e monte do seu jeito.</p>
+  </div>
+  <div class="cardapio-grid">
+
+    <div class="menu-card">
+      <div class="menu-card-img">
+        <span class="menu-card-tag">Mais Pedido</span>
+        <img src="acai-card-1.jpg" alt="Açaí Médio">
+      </div>
+      <div class="menu-card-body">
+        <h3>Açaí Médio</h3>
+        <p>O tamanho perfeito para matar a vontade. Creme de açaí cremoso acompanhado de até 4 complementos à sua escolha.</p>
+        <div class="menu-card-foot">
+          <div class="menu-price">R$ 18 <span>/ unid</span></div>
+          <a href="https://wa.me/5547997614412?text=Quero%20pedir%20um%20Açaí%20Médio" target="_blank" class="menu-cta">Pedir →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-img">
+        <span class="menu-card-tag">Família</span>
+        <img src="acai-card-2.jpg" alt="Açaí Grande">
+      </div>
+      <div class="menu-card-body">
+        <h3>Açaí Grande</h3>
+        <p>Para quem ama de verdade. Porção generosa de açaí cremoso com até 6 acompanhamentos — banana, granola, leite condensado e muito mais.</p>
+        <div class="menu-card-foot">
+          <div class="menu-price">R$ 26 <span>/ unid</span></div>
+          <a href="https://wa.me/5547997614412?text=Quero%20pedir%20um%20Açaí%20Grande" target="_blank" class="menu-cta">Pedir →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-img">
+        <span class="menu-card-tag">Personalizado</span>
+        <img src="acai-card-3.jpg" alt="Monte o Seu">
+      </div>
+      <div class="menu-card-body">
+        <h3>Monte o Seu</h3>
+        <p>Escolha o tamanho, os acompanhamentos e as frutas. Sua tigela do exato jeito que você gosta — sem limites para a criatividade.</p>
+        <div class="menu-card-foot">
+          <div class="menu-price">R$ 22 <span>/ a partir</span></div>
+          <a href="https://wa.me/5547997614412?text=Quero%20montar%20meu%20açai" target="_blank" class="menu-cta">Montar →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depo" id="depoimentos">
+  <div class="section-head">
+    <span class="section-label">Quem Prova, Aprova</span>
+    <h2>Vocês são a <em>nossa inspiração</em></h2>
+    <p>Cada sorriso, cada retorno, cada mensagem. É isso que nos move todos os dias na Rua Monte Sotara.</p>
+  </div>
+  <div class="depo-grid">
+
+    <div class="dep-card">
+      <div class="dep-quote">"</div>
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">Melhor açaí de Camboriú, sem exagero! O creme é realmente cremoso, não aguado como em outros lugares. Atendimento nota mil.</p>
+      <div class="dep-author">
+        <div class="dep-avatar">M</div>
+        <div class="dep-author-info">
+          <strong>Mariana Costa</strong>
+          <span>Cliente fiel · há 2 anos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dep-card">
+      <div class="dep-quote">"</div>
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">Dá pra sentir o carinho em cada detalhe. Casal gentil, açaí maravilhoso e preço justo. Virei cliente desde a primeira vez.</p>
+      <div class="dep-author">
+        <div class="dep-avatar">R</div>
+        <div class="dep-author-info">
+          <strong>Rodrigo Almeida</strong>
+          <span>Morador de Camboriú</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dep-card">
+      <div class="dep-quote">"</div>
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">Pedi pelo WhatsApp e chegou tudo certinho. A opção de montar o meu foi perfeita. Recomendo demais o Piko do Açaí!</p>
+      <div class="dep-author">
+        <div class="dep-avatar">J</div>
+        <div class="dep-author-info">
+          <strong>Juliana Souza</strong>
+          <span>Balneário Camboriú</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="contato-info">
+    <span class="section-label">Onde Nos Encontrar</span>
+    <h2>Vem pro <em>Piko</em> nos visitar.</h2>
+    <p>Estamos prontos para te atender com o melhor açaí de Camboriú. Faça seu pedido ou venha conhecer nossa loja.</p>
+    <ul class="contato-list">
+      <li>
+        <div class="icon">📍</div>
+        <div class="info">
+          <small>Endereço</small>
+          <strong>R. Monte Sotara, 1000 — Monte Alegre, Camboriú/SC</strong>
+        </div>
+      </li>
+      <li>
+        <div class="icon">🕐</div>
+        <div class="info">
+          <small>Horário de Funcionamento</small>
+          <strong>Terça a Sábado · 11:00 às 22:00 hrs</strong>
+        </div>
+      </li>
+      <li>
+        <div class="icon">💬</div>
+        <div class="info">
+          <small>WhatsApp para Pedidos</small>
+          <strong>(47) 99761-4412</strong>
+        </div>
+      </li>
+    </ul>
+    <div class="contato-actions">
+      <a href="https://wa.me/5547997614412?text=Olá!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" class="btn-primary">💬 Pedir pelo WhatsApp</a>
+      <a href="https://maps.google.com/?q=R.+Monte+Sotara,+1000+-+Monte+Alegre,+Camboriú+-+SC" target="_blank" class="btn-ghost">🗺️ Ver no Mapa</a>
+    </div>
+  </div>
+  <div class="contato-map">
+    <iframe src="https://www.google.com/maps?q=R.+Monte+Sotara,+1000+-+Monte+Alegre,+Camboriú+-+SC&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="logo-piko.png" alt="Piko do Açaí">
+        <div class="name">Piko do <b>Açaí</b></div>
+      </div>
+      <p>O açaí cremoso que conquistou Camboriú. Feito por uma família, com amor, desde 2020. Venha nos visitar na Rua Monte Sotara e prove a diferença.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/5547997614412" target="_blank" title="WhatsApp">💬</a>
+        <a href="https://www.instagram.com/pikodoacai/" target="_blank" title="Instagram">📷</a>
+        <a
