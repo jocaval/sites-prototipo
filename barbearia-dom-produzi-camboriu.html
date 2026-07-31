@@ -3,209 +3,702 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barbearia Dom Produzi Camboriú | Barbearia Premium</title>
-<meta name="description" content="Barbearia Dom Produzi Camboriú — Barbearia premium em Alameda Cap. Ernesto Nunes, 991, Camboriú - SC. Agende pelo WhatsApp.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Barbearia Dom Produzi Camboriú">
-<meta property="og:description" content="Barbearia Dom Produzi Camboriú — Barbearia premium em Alameda Cap. Ernesto Nunes, 991, Camboriú - SC. Agende pelo WhatsApp.">
+<title>Barbearia Dom Produzi Camboriú | Atendimento Expresso Premium</title>
+<meta name="description" content="Barbearia Dom Produzi Camboriú em Camboriú - SC. Atendimento expresso com qualidade premium. Cortes, barba e combos. Ter a Sáb, 11h às 22h. Agende pelo WhatsApp.">
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Barbearia Dom Produzi Camboriú | Atendimento Expresso Premium">
+<meta property="og:description" content="Sua melhor versão, sem perder tempo. Barbearia premium em Camboriú - SC.">
+<meta property="og:url" content="https://barbeariadomproduzi.com.br">
 <meta property="og:image" content="barbearia-fachada.jpg">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="icon" type="image/svg+xml" href="logo-barbearia.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Barbearia Dom Produzi Cambori\u00fa", "address": {"@type": "PostalAddress", "streetAddress": "Alameda Cap. Ernesto Nunes", "addressLocality": "Cambori\u00fa", "addressRegion": "SC"}, "telephone": "(47) 99999-9999"}</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Barbearia Dom Produzi Camboriú",
+  "image": "barbearia-fachada.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Alameda Cap. Ernesto Nunes, 991",
+    "addressLocality": "Camboriú",
+    "addressRegion": "SC",
+    "addressCountry": "BR"
+  },
+  "telephone": "+5547999999999",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "11:00",
+      "closes": "22:00"
+    }
+  ],
+  "priceRange": "$$",
+  "url": "https://barbeariadomproduzi.com.br"
+}
+</script>
 <style>
-  :root{
-    --bg:#0a0a0a;
-    --surface:#111;
-    --card:#1a1a1a;
-    --border:#222;
-    --primary:#C8955A;
-    --text:#f0ede6;
-    --muted:#9b9488;
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0a;
+    --bg-2: #121212;
+    --gold: #C8955A;
+    --gold-soft: #d4a468;
+    --white: #f5f1ea;
+    --gray: #8a8a8a;
+    --gray-dark: #2a2a2a;
+    --line: #1f1f1f;
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;line-height:1.1}
-  a{color:inherit;text-decoration:none}
-  img{display:block;max-width:100%}
-  .container{max-width:1160px;margin:0 auto;padding:0 24px}
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 
   /* TOP BAR */
-  .topbar{background:var(--primary);color:var(--bg);text-align:center;padding:10px;font-size:.8rem;font-weight:700;letter-spacing:.5px}
-  .topbar a{text-decoration:underline}
+  .topbar {
+    background: var(--gold);
+    color: #0a0a0a;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    text-align: center;
+    padding: 8px 16px;
+    text-transform: uppercase;
+  }
+  .topbar a { font-weight: 700; border-bottom: 1px solid #0a0a0a; }
 
   /* HEADER */
-  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,0.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);margin-top:36px}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand img{width:40px;height:40px;border-radius:8px}
-  .brand-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;letter-spacing:1px}
-  .nav-links{display:flex;gap:28px;align-items:center;list-style:none}
-  .nav-links a{font-size:.85rem;color:var(--muted);font-weight:500;letter-spacing:1px;transition:color .2s}
-  .nav-links a:hover{color:var(--primary)}
-  .nav-cta{background:var(--primary);color:var(--bg);padding:10px 22px;border-radius:4px;font-weight:700;font-size:.85rem;letter-spacing:1px;transition:opacity .2s}
-  .nav-cta:hover{opacity:.85}
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo img { height: 38px; width: 38px; }
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .logo-text span { display: block; font-size: 10px; letter-spacing: 0.3em; color: var(--gold); font-family: 'Source Sans 3', sans-serif; font-weight: 500; margin-top: 2px; }
+  .nav-links { display: flex; gap: 38px; list-style: none; }
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--white);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .btn-gold {
+    background: var(--gold);
+    color: #0a0a0a;
+    padding: 12px 26px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-gold:hover { background: transparent; color: var(--gold); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 12px 26px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--gray-dark);
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .menu-toggle { display: none; background: none; border: none; color: var(--white); font-size: 22px; cursor: pointer; }
 
   /* HERO */
-  .hero{padding:180px 24px 80px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%)}
-  .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to bottom, transparent, var(--bg));pointer-events:none}
-  .hero-tag{display:inline-block;color:var(--primary);font-size:.75rem;font-weight:700;letter-spacing:3px;margin-bottom:20px}
-  .hero h1{font-size:clamp(2rem,6vw,4.2rem);max-width:800px;margin:0 auto 20px;text-transform:uppercase;letter-spacing:-1px}
-  .hero h1 em{color:var(--primary);font-style:normal}
-  .hero p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:0 auto 36px;line-height:1.7}
-  .hero-hl{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);padding:10px 20px;border-radius:4px;font-size:.85rem;font-weight:600;margin:0 6px 8px;color:var(--primary)}
-  .hero-cta{display:inline-block;background:var(--primary);color:var(--bg);padding:14px 36px;border-radius:4px;font-weight:700;font-size:.95rem;letter-spacing:1px;transition:opacity .2s;margin-top:24px}
-  .hero-cta:hover{opacity:.85}
+  .hero {
+    padding: 90px 0 100px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(200,149,90,0.08), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    align-items: center;
+    position: relative;
+  }
+  .tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+  .tagline::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.05;
+    margin-bottom: 28px;
+    color: var(--white);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .hero p {
+    font-size: 17px;
+    color: var(--gray);
+    max-width: 480px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .highlights {
+    display: flex;
+    gap: 36px;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+  }
+  .highlight {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .highlight .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .highlight .lbl {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-img {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.15) contrast(1.05); }
+  .hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(10,10,10,0.5));
+  }
+  .hero-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(10,10,10,0.85);
+    border: 1px solid var(--gold);
+    padding: 14px 20px;
+    border-radius: 4px;
+    z-index: 2;
+  }
+  .hero-badge .t1 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); }
+  .hero-badge .t2 { font-size: 10px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-top: 2px; }
 
-  /* SECTION */
-  section{padding:80px 0}
-  section.dark{background:var(--surface)}
-  .section-tag{color:var(--primary);font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
-  .section-title{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:14px;text-transform:uppercase;letter-spacing:-.5px}
-  .section-sub{color:var(--muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7}
+  /* SECTION HEADER */
+  .section { padding: 100px 0; border-bottom: 1px solid var(--line); }
+  .section-head { margin-bottom: 60px; max-width: 720px; }
+  .section-head .label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .section-head h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 18px;
+  }
+  .section-head p { color: var(--gray); font-size: 16px; max-width: 560px; }
 
-  /* SOBRE */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-  .about-img{border-radius:4px;overflow:hidden}
-  .about-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
-  .about-text p{color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:16px}
-  .about-stats{display:flex;gap:40px;margin-top:28px}
-  .stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--primary);font-weight:700}
-  .stat-lbl{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+  /* HISTORIA */
+  .historia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .historia-img {
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    position: relative;
+  }
+  .historia-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.1); }
+  .historia-img .frame {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    border: 1px solid rgba(200,149,90,0.4);
+    pointer-events: none;
+  }
+  .historia-text h2 {
+    font-size: clamp(30px, 3.5vw, 44px);
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+  .historia-text h2 em { font-style: italic; color: var(--gold); font-weight: 500; }
+  .historia-text p { color: var(--gray); margin-bottom: 18px; font-size: 16px; line-height: 1.8; }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .stat .n { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--gold); font-weight: 600; line-height: 1; }
+  .stat .l { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); margin-top: 8px; }
 
-  /* SERVIÇOS */
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .service-card{background:var(--card);border:1px solid var(--border);padding:28px;text-align:center;transition:border-color .3s}
-  .service-card:hover{border-color:var(--primary)}
-  .service-icon{font-size:2rem;margin-bottom:14px}
-  .service-card h3{font-size:1.1rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-  .service-card p{color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:8px}
-  .service-price{color:var(--primary);font-weight:700;font-size:1.1rem;margin-top:12px}
+  /* SERVICOS */
+  .servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .servico {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 44px 36px;
+    transition: border-color 0.25s;
+  }
+  .servico:hover { border-color: var(--gold); }
+  .servico .icon {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    color: var(--gold);
+  }
+  .servico .icon svg { width: 26px; height: 26px; }
+  .servico h3 { font-size: 24px; margin-bottom: 12px; color: var(--white); }
+  .servico .desc { color: var(--gray); font-size: 15px; margin-bottom: 24px; line-height: 1.7; }
+  .servico ul { list-style: none; margin-bottom: 28px; }
+  .servico ul li {
+    font-size: 14px;
+    color: var(--white);
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+  }
+  .servico ul li:last-child { border-bottom: 1px solid var(--line); }
+  .servico ul li .price { color: var(--gold); font-weight: 600; }
+  .servico .link {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+  }
 
   /* DEPOIMENTOS */
-  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .review-card{background:var(--card);border:1px solid var(--border);padding:28px;text-align:center}
-  .review-stars{color:var(--primary);font-size:1rem;letter-spacing:2px;margin-bottom:14px}
-  .review-card p{color:var(--text);font-size:.9rem;font-style:italic;line-height:1.7;margin-bottom:16px}
-  .review-avatar{width:40px;height:40px;border-radius:50%;background:var(--primary);color:var(--bg);display:inline-flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;margin-bottom:8px}
-  .review-name{font-weight:600;font-size:.85rem}
-  .review-verified{color:var(--primary);font-size:.7rem;margin-top:2px}
+  .depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .depoimento {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 36px 32px;
+  }
+  .stars { display: flex; gap: 4px; margin-bottom: 20px; color: var(--gold); }
+  .stars svg { width: 16px; height: 16px; }
+  .depoimento .texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .cliente {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .cliente-info .nome { font-size: 14px; color: var(--white); font-weight: 600; }
+  .cliente-info .verif { font-size: 11px; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
+  .cliente-info .verif::before { content: "✓"; color: var(--gold); }
 
   /* CONTATO */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-  .contact-info{display:flex;flex-direction:column;gap:20px}
-  .contact-row{display:flex;align-items:flex-start;gap:14px}
-  .contact-icon{font-size:1.2rem;color:var(--primary);flex-shrink:0;margin-top:2px}
-  .contact-row h4{font-size:.85rem;font-weight:600;margin-bottom:2px}
-  .contact-row p{color:var(--muted);font-size:.9rem}
-  .wa-btn{display:inline-block;background:#25D366;color:#fff;padding:14px 32px;font-weight:700;font-size:.9rem;border-radius:4px;transition:opacity .2s;align-self:flex-start}
-  .wa-btn:hover{opacity:.85}
-  .map-wrap{border-radius:4px;overflow:hidden;border:1px solid var(--border);height:100%;min-height:340px}
-  .map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(0.3) invert(0.9) hue-rotate(180deg)}
+  .contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: stretch;
+  }
+  .contato-info { display: flex; flex-direction: column; gap: 28px; }
+  .info-item {
+    display: flex;
+    gap: 18px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .info-item:last-child { border-bottom: none; }
+  .info-item .ic {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .info-item .ic svg { width: 20px; height: 20px; }
+  .info-item .lbl { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gray); margin-bottom: 6px; }
+  .info-item .val { font-size: 16px; color: var(--white); font-weight: 400; }
+  .info-item .val a { color: var(--white); }
+  .info-item .val a:hover { color: var(--gold); }
+  .mapa {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 380px;
+    background: var(--bg-2);
+  }
+  .mapa iframe { width: 100%; height: 100%; min-height: 380px; border: 0; filter: grayscale(1) invert(0.9) contrast(0.9); }
 
   /* FOOTER */
-  footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 0 24px}
-  .footer-top{display:flex;justify-content:center;gap:24px;margin-bottom:32px}
-  .footer-icon{width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:border-color .2s}
-  .footer-icon:hover{border-color:var(--primary)}
-  .footer-hours{text-align:center;color:var(--muted);font-size:.8rem;line-height:1.8;margin-bottom:24px}
-  .footer-bottom{text-align:center;color:var(--muted);font-size:.75rem;padding-top:20px;border-top:1px solid var(--border)}
+  footer {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    padding: 60px 0 30px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+  .footer-brand .logo-text { font-size: 20px; margin-bottom: 18px; }
+  .footer-brand p { color: var(--gray); font-size: 14px; max-width: 320px; line-height: 1.7; }
+  .footer-col h4 {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a { color: var(--gray); font-size: 14px; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .social { display: flex; gap: 12px; margin-top: 24px; }
+  .social a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    transition: all 0.2s;
+  }
+  .social a:hover { border-color: var(--gold); color: var(--gold); }
+  .social a svg { width: 18px; height: 18px; }
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-bottom p { color: var(--gray); font-size: 13px; }
+  .footer-bottom .horario { color: var(--gold); font-size: 13px; letter-spacing: 0.1em; }
 
-  @media (max-width:900px){
-    .nav-links{display:none}
-    .about-grid,.contact-grid{grid-template-columns:1fr}
-    .services-grid,.reviews-grid{grid-template-columns:1fr}
-    header{margin-top:46px}
-    .hero{padding:140px 20px 60px}
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid var(--line); }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: block; }
+    .nav .btn-gold { display: none; }
+    .hero-grid, .historia-grid, .contato-grid { grid-template-columns: 1fr; gap: 40px; }
+    .servicos-grid, .depoimentos-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero { padding: 60px 0 70px; }
+    .section { padding: 70px 0; }
+    .stats { gap: 16px; }
+    .stat .n { font-size: 28px; }
+  }
+  @media (max-width: 560px) {
+    .container { padding: 0 20px; }
+    .nav { padding: 16px 20px; }
+    .highlights { gap: 20px; }
+    .hero-cta { flex-direction: column; }
+    .hero-cta .btn-gold, .hero-cta .btn-outline { text-align: center; }
   }
 </style>
 </head>
 <body>
-<div class="topbar">ATENDIMENTO PREMIUM · AGENDE PELO WHATSAPP → <a href="https://wa.me/5547999999999">CLIQUE AQUI</a></div>
+
+<div class="topbar">
+  Atendimento expresso · <a href="https://wa.me/5547999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio">AGENDE PELO WHATSAPP</a>
+</div>
+
 <header>
-  <div class="container">
-    <nav class="nav">
-      <a href="#" class="brand">
-        <img src="logo-barbearia.svg" alt="Barbearia Dom Produzi Camboriú">
-        <span class="brand-name">Barbearia Dom Produzi</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#sobre">HISTÓRIA</a></li>
-        <li><a href="#servicos">SERVIÇOS</a></li>
-        <li><a href="#depoimentos">DEPOIMENTOS</a></li>
-        <li><a href="#contato">CONTATO</a></li>
-      </ul>
-      <a href="https://wa.me/5547999999999" class="nav-cta" target="_blank">AGENDAR</a>
-    </nav>
-  </div>
+  <nav class="nav">
+    <a href="#" class="logo">
+      <img src="logo-barbearia.svg" alt="Logo Barbearia Dom Produzi">
+      <div class="logo-text">DOM PRODUZI<span>BARBEARIA · CAMBORIU</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#historia">História</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="https://wa.me/5547999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio" class="btn-gold">Agendar</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+  </nav>
 </header>
+
 <section class="hero">
   <div class="container">
-    <div class="hero-tag">ATENDIMENTO EXPRESSO COM QUALIDADE PREMIUM</div>
-    <h1>SUA MELHOR VERSÃO,<br>SEM PERDER TEMPO.</h1>
-    <p>Cortes precisos em 30 minutos, barba impecável e atendimento premium no coração de Camboriú. Profissionais experientes e ambiente acolhedor.</p>
-    <div style="margin-bottom:20px"><span class="hero-hl">💈 Premium</span><span class="hero-hl">⭐ 5.0</span><span class="hero-hl">🕐 30min</span></div>
-    <a href="https://wa.me/5547999999999" class="hero-cta" target="_blank">AGENDAR HORÁRIO</a>
-  </div>
-</section>
-<section id="sobre">
-  <div class="container">
-    <div class="section-tag">NOSSA HISTÓRIA</div>
-    <h2 class="section-title">EXCELÊNCIA EM CAMBORIÚ</h2>
-    <div class="about-grid" style="margin-top:40px">
-      <div class="about-img"><img src="barbearia-fachada.jpg" alt="Barbearia Dom Produzi Camboriú"></div>
-      <div class="about-text">
-        <p>A Barbearia Dom Produzi Camboriú nasceu com um propósito claro: elevar o padrão do cuidado masculino. Sob uma gestão apaixonada pelos detalhes, construímos mais do que uma barbearia — criamos um espaço de alta performance.</p><p>Entendemos o valor do seu tempo. Por isso, aliamos técnica impecável à agilidade que o homem moderno exige.</p>
-        <div class="about-stats"><div class="stat-num">5.0★</div><div class="stat-lbl">Google Maps</div></div>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="tagline">Atendimento expresso com qualidade premium</span>
+        <h1>Sua melhor versão, <em>sem perder tempo.</em></h1>
+        <p>Na Barbearia Dom Produzi Camboriú, unimos precisão, técnica e atendimento ágil para entregar cortes e barbas impecáveis. Cada cliente é recebido como único — e sai pronto para a próxima batalha do dia.</p>
+        <div class="highlights">
+          <div class="highlight">
+            <span class="num">11h</span>
+            <span class="lbl">Abertura</span>
+          </div>
+          <div class="highlight">
+            <span class="num">22h</span>
+            <span class="lbl">Fechamento</span>
+          </div>
+          <div class="highlight">
+            <span class="num">5★</span>
+            <span class="lbl">Avaliação</span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="https://wa.me/5547999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio" class="btn-gold">Agendar Horário</a>
+          <a href="#servicos" class="btn-outline">Ver Serviços</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="barbearia-fachada.jpg" alt="Fachada da Barbearia Dom Produzi Camboriú">
+        <div class="hero-badge">
+          <div class="t1">Camboriú · SC</div>
+          <div class="t2">Alameda Cap. Ernesto Nunes</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<section class="dark" id="servicos">
+
+<section class="section" id="historia">
   <div class="container">
-    <div class="section-tag">MENU EXCLUSIVO</div>
-    <h2 class="section-title">CUIDADO COMPLETO</h2>
-    <p class="section-sub">Serviços pensados para o homem que valoriza estilo, conforto e pontualidade.</p>
-    <div class="services-grid"><div class="service-card"><div class="service-icon">💈</div><h3>Corte & Estilo</h3><p>Cortes clássicos e modernos com técnica e precisão.</p><div class="service-price">Sob consulta</div></div><div class="service-card"><div class="service-icon">🧔</div><h3>Barba</h3><p>Modelagem com toalha quente e navalha.</p><div class="service-price">Sob consulta</div></div><div class="service-card"><div class="service-icon">✨</div><h3>Combo</h3><p>Corte + barba para sair renovado.</p><div class="service-price">Sob consulta</div></div></div>
-  </div>
-</section>
-<section id="depoimentos">
-  <div class="container">
-    <div class="section-tag">SOCIAL PROOF</div>
-    <h2 class="section-title">O QUE DIZEM NOSSOS CLIENTES</h2>
-    <div class="reviews-grid" style="margin-top:40px"><div class="review-card"><div class="review-stars">★★★★★</div><p>"Melhor barbearia de Camboriú. Atendimento impecável."</p><div class="review-avatar">R</div><div class="review-name">Rafael M.</div><div class="review-verified">Cliente verificado ✓</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p>"Corte preciso e ambiente acolhedor."</p><div class="review-avatar">J</div><div class="review-name">Juliano P.</div><div class="review-verified">Cliente verificado ✓</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p>"Virei cliente fiel. Recomendo demais."</p><div class="review-avatar">C</div><div class="review-name">Carlos A.</div><div class="review-verified">Cliente verificado ✓</div></div></div>
-  </div>
-</section>
-<section class="dark" id="contato">
-  <div class="container">
-    <div class="section-tag">SEM FRICÇÃO</div>
-    <h2 class="section-title">FÁCIL ACESSO</h2>
-    <div class="contact-grid" style="margin-top:40px">
-      <div class="contact-info">
-        <div class="contact-row"><span class="contact-icon">📍</span><div><h4>Endereço</h4><p>Alameda Cap. Ernesto Nunes, 991, Camboriú - SC</p></div></div>
-        <div class="contact-row"><span class="contact-icon">🕐</span><div><h4>Horário</h4><p>Ter-Sáb 11h-22h</p></div></div>
-        <div class="contact-row"><span class="contact-icon">📱</span><div><h4>WhatsApp</h4><p>(47) 99999-9999</p></div></div>
-        <a href="https://wa.me/5547999999999" class="wa-btn" target="_blank">FALAR NO WHATSAPP</a>
+    <div class="historia-grid">
+      <div class="historia-img">
+        <img src="barbearia-card-1.jpg" alt="Interior da barbearia Dom Produzi">
+        <div class="frame"></div>
       </div>
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Alameda%2BCap.%2BErnesto%2BNunes%2C%2B991%2C%2BCambori%C3%BA&output=embed" loading="lazy" title="Mapa"></iframe>
+      <div class="historia-text">
+        <span class="label" style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:18px;">Nossa História</span>
+        <h2>Tradição que se mede em <em>detalhes.</em></h2>
+        <p>A Dom Produzi nasceu da convicção de que um corte não é apenas estética — é ritual. Em Camboriú, construímos um espaço onde o tempo é respeitado e cada cliente recebe atenção integral, do primeiro contato ao acabamento final.</p>
+        <p>Nossa equipe combina técnica clássica e tendências contemporâneas, sempre com a marca registrada da casa: agilidade sem abrir mão do acabamento premium.</p>
+        <div class="stats">
+          <div class="stat">
+            <div class="n">+8</div>
+            <div class="l">Anos de ofício</div>
+          </div>
+          <div class="stat">
+            <div class="n">+12k</div>
+            <div class="l">Clientes atendidos</div>
+          </div>
+          <div class="stat">
+            <div class="n">4.9</div>
+            <div class="l">Nota média Google</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<footer>
+
+<section class="section" id="servicos">
   <div class="container">
-    <div class="footer-top">
-      <a href="#" class="footer-icon" target="_blank">📸</a>
-      <a href="https://wa.me/5547999999999" class="footer-icon" target="_blank">💬</a>
-      <a href="#" class="footer-icon" target="_blank">⭐</a>
+    <div class="section-head">
+      <span class="label">Serviços</span>
+      <h2>Cortes sob medida, feitos para durar.</h2>
+      <p>Três modalidades pensadas para o homem que valoriza tempo e resultado. Escolha a sua e agende em segundos pelo WhatsApp.</p>
     </div>
-    <div class="footer-hours">
-      <strong>HORÁRIO DE FUNCIONAMENTO</strong><br>Ter-Sáb 11h-22h
+    <div class="servicos-grid">
+      <div class="servico">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8c0-2 2-4 6-4s6 2 6 4v8c0 1-1 2-2 2H8c-1 0-2-1-2-2V8z"/><path d="M9 12v6M12 12v6M15 12v6"/></svg>
+        </div>
+        <h3>Corte & Estilo</h3>
+        <p class="desc">Corte personalizado com acabamento na navalha e finalização com produtos premium.</p>
+        <ul>
+          <li><span>Corte Masculino</span><span class="price">R$ 50</span></li>
+          <li><span>Corte + Pigmentação</span><span class="price">R$ 70</span></li>
+          <li><span>Corte Infantil</span><span class="price">R$ 40</span></li>
+        </ul>
+        <a href="https://wa.me/5547999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20Corte%20%26%20Estilo" class="link">Agendar →</a>
+      </div>
+      <div class="servico">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6c4-2 12-2 16 0M4 6c4 4 12 4 16 0M6 10c3 3 9 3 12 0M8 14c2 2 6 2 8 0"/></svg>
+        </div>
+        <h3>Barba</h3>
+        <p class="desc">Toalha quente, navalha e modelagem completa para uma barba alinhada e saudável.</p>
+        <ul>
+          <li><span>Barba Completa</span><span class="price">R$ 45</span></li>
+          <li><span>Barba + Bigode</span><span class="price">R$ 55</span></li>
+          <li><span>Acabamento Navalha</span><span class="price">R$ 35</span></li>
+        </ul>
+        <a href="https://wa.me/5547999999999?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20Barba" class="link">Agendar →</a>
+      </div>
+      <div class="servico">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/></svg>
+        </div>
+        <h3>Combo</h3>
+        <p class="desc">Corte + barba em sequência. A experiência completa para um visual renovado.</p>
+        <ul>
+          <li><span>Corte + Barba</span><span class="price">R$ 85</span></li>
+          <li><span>Combo + Sobrancelha</span><span class="price">R$ 95</span></li>
+          <li><span>Combo Premium</span><span class="price">R$ 120</span></li>
+        </ul>
+        <a href="https://wa.me/5547999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20Combo" class="link">Agendar →</a>
+      </div>
     </div>
-    <div class="footer-bottom">© 2025 Barbearia Dom Produzi Camboriú. Todos os direitos reservados.</div>
   </div>
-</footer>
-</body>
-</html>
+</section>
+
+<section class="section" id="depoimentos">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Depoimentos</span>
+      <h2>O que dizem nossos clientes.</h2>
+      <p>Histórias reais de quem confia na Dom Produzi para cuidar do visual.</p>
+    </div>
+    <div class="depoimentos-grid">
+      <div class="depoimento">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        </div>
+        <p class="texto">"Atendimento impecável e rápido. Saí com o corte exatamente como pedi, sem espera. Virei cliente fiel."</p>
+        <div class="cliente">
+          <div class="avatar">R</div>
+          <div class="cliente-info">
+            <div class="nome">Rafael Mendes</div>
+            <div class="verif">Cliente verificado</div>
+          </div>
+        </div>
+      </div>
+      <div class="depoimento">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+          <svg viewBox="0
