@@ -161,7 +161,7 @@
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
+  .hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;z-index:1}.hero::before{
     content: "";
     position: absolute;
     inset: 0;
@@ -595,7 +595,7 @@
   <div class="container">
     <div class="historia-grid">
       <div class="historia-img">
-        <img src="barbearia-card-1.jpg" alt="Interior da barbearia Dom Produzi">
+        <img src="barbearia-fachada.jpg" alt="Fachada Barbearia Dom Produzi">
         <div class="frame"></div>
       </div>
       <div class="historia-text">
@@ -632,7 +632,7 @@
     <div class="servicos-grid">
       <div class="servico">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8c0-2 2-4 6-4s6 2 6 4v8c0 1-1 2-2 2H8c-1 0-2-1-2-2V8z"/><path d="M9 12v6M12 12v6M15 12v6"/></svg>
+          <img src="barbearia-card-1.jpg" alt="Corte & Estilo" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px;margin-bottom:16px">
         </div>
         <h3>Corte & Estilo</h3>
         <p class="desc">Corte personalizado com acabamento na navalha e finalização com produtos premium.</p>
@@ -644,9 +644,7 @@
         <a href="https://wa.me/5547999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20Corte%20%26%20Estilo" class="link">Agendar →</a>
       </div>
       <div class="servico">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6c4-2 12-2 16 0M4 6c4 4 12 4 16 0M6 10c3 3 9 3 12 0M8 14c2 2 6 2 8 0"/></svg>
-        </div>
+        <img src="barbearia-card-2.jpg" alt="Barba" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px;margin-bottom:16px">
         <h3>Barba</h3>
         <p class="desc">Toalha quente, navalha e modelagem completa para uma barba alinhada e saudável.</p>
         <ul>
@@ -657,9 +655,7 @@
         <a href="https://wa.me/5547999999999?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20Barba" class="link">Agendar →</a>
       </div>
       <div class="servico">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/></svg>
-        </div>
+        <img src="barbearia-card-3.jpg" alt="Combo" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px;margin-bottom:16px">
         <h3>Combo</h3>
         <p class="desc">Corte + barba em sequência. A experiência completa para um visual renovado.</p>
         <ul>
@@ -681,28 +677,7 @@
       <p>Histórias reais de quem confia na Dom Produzi para cuidar do visual.</p>
     </div>
     <div class="depoimentos-grid">
-      <div class="depoimento">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-        </div>
-        <p class="texto">"Atendimento impecável e rápido. Saí com o corte exatamente como pedi, sem espera. Virei cliente fiel."</p>
-        <div class="cliente">
-          <div class="avatar">R</div>
-          <div class="cliente-info">
-            <div class="nome">Rafael Mendes</div>
-            <div class="verif">Cliente verificado</div>
-          </div>
-        </div>
-      </div>
-      <div class="depoimento">
-        <div class="stars">★★★★★</div>
-        <p class="texto">"Atendimento impecável e rápido. Saí com o corte exatamente como pedi, sem espera. Virei cliente fiel."</p>
-        <div class="cliente">
-          <div class="avatar">R</div>
+      
           <div class="cliente-info">
             <div class="nome">Rafael Mendes</div>
             <div class="verif">Cliente verificado</div>
